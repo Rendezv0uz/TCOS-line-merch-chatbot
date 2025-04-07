@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: #ffffff;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.test {
+    z-index: 10;
+    background-color: black;
+    top: 0;
+    height: 80px;
+    position: sticky;
+}
+
+header {
+    z-index: 10;
+    top: 0px;
+    box-sizing: border-box;
+    height: 48px;
+    position: sticky;
+    display: flex;
+    padding: 30px 20px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+}
+
+header .logo {
+    width: 60px;
+    position: absolute;
+    left: 13px;
+}
+
+header a {
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 13px;
+}
+
+header .cart-icon {
+    width: 18px;
+    height: auto;
+    margin: 13px;
+    margin-right: 0px;
+}
+
+main {
+    position: relative;
+    padding: 20px 30px;
+}
+
+.back-button {
+    all: unset;
+    font-size: 12px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ffffff;
+    color: black;
+    animation: forwards;
+}
+
+.cart-controls {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.block-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    gap: 10px;
+}
+
+.decrease-btn {
+    font-size: 16px;
+    right: 0px;
+    height: 32px;
+    width: 32px;
+    background-color: #1E1E1E;
+    color: white;
+    border-radius: 100%;
+    border: none;
+}
+
+.increase-btn {
+    font-size: 16px;
+    right: 0px;
+    height: 32px;
+    width: 32px;
+    background-color: #1E1E1E;
+    color: white;
+    border-radius: 100%;
+    border: none;
+}
+
+.line {
+    border-top: 1px solid #ffffff;
+    margin: 10px 0 10px 0;
+}
+
+.support-section {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-bar {
+    position: absolute;
+    display: flex;
+    right: 0;
+    gap: 5px;
+}
+
+input {
+    background-color: black;
+    color: #ffffff;
+    border: 1px solid white;
+    height: 20px;
+    width: 90px;
+}
+
+.shipping-section {
+    position: relative;
+    bottom: 0;
+    background-color: #1E1E1E;
+    margin: 0;
+    padding: 10px 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+.shipping-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 0px 20px;
+    background-color: rgb(69, 69, 69);
+}
+
+.shipping-option span {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+}
+
+.total-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.total-section span {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+}
+
+.cart-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    padding: 10px 0px 20px;
+}
+
+.cart-actions button {
+    font-size: 16px;
+    padding: 10px 0px;
+    width: 150px;
+    background-color: #474747;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}

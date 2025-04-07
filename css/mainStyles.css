@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fachada&display=swap");
+
+* {
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: #ffffff;
+}
+
+.test {
+  z-index: 10;
+  background-color: rgb(61, 61, 61);
+  top: 0;
+  height: 80px;
+  position: sticky;
+}
+header {
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  top: 0;
+  box-sizing: border-box;
+  height: 48px;
+  position: sticky;
+  display: flex;
+  padding: 30px 20px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: black;
+}
+
+header .logo {
+  width: 60px;
+  position: absolute;
+  left: 13px;
+}
+
+header a {
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 13px;
+}
+
+header .cart {
+  width: 18px;
+  height: auto;
+  margin: 13px;
+  margin-right: 0px;
+}
+
+/* .parallax {
+  position: relative;
+  z-index: 1;
+} */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  border: 2px solid #333;
+}
+
+.box2 {
+  width: 66.66%;
+  aspect-ratio: 2/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Fachada";
+  box-sizing: border-box;
+  border: 1px solid #999;
+  background-image: url("../assets/images/model1.jpg");
+  background-size: contain;
+}
+
+.box {
+  width: 33.33%;
+  aspect-ratio: 1 / 1; /* Ensures a square shape */
+  display: flex;
+  font-family: "Fachada";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #999;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-container img {
+  width: 100vw;
+  height: 384px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel button {
+  height: 32px;
+  width: 32px;
+  background: rgb(67, 67, 67);
+  border: none;
+  border-radius: 100%;
+  outline: none;
+
+  color: #fff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 10px;
+
+  position: absolute;
+  top: 50%;
+}
+
+.btn-previous {
+  left: 0%;
+}
+
+.btn-next {
+  right: 0%;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-indicators .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+  background-color: white;
+}
+
+/* .carousel {
+} */
+
+.our-product {
+  margin: 30px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.product-list .product {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 140px;
+  height: 220px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+}
+
+.product-card {
+  width: 140px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1e1e1e;
+}
+
+.product-card img {
+  object-fit: cover;
+  height: 160px;
+  display: block;
+}
+
+.product-name {
+  font-size: 14px;
+  margin: 10px 10px 0px;
+  color: #ffffff;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0px 10px 10px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+  margin: auto;
+}
+
+footer {
+  margin: 30px 0px 0px;
+  height: 200px;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

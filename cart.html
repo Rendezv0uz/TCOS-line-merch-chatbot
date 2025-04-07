@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/cartStyles.css" />
+    <script defer src="js/cartScript.js"></script>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <header>
+        <img class="logo" src="assets/icons/logo.png" />
+        <a
+          href="https://linktr.ee/thecomingofstages_documentary?utm_source=linktree_admin_share&fbclid=PAZXh0bgNhZW0CMTEAAaaC45ozK93iGOUj_dmeCmfEM0Pzr2dT35lfQrKNvsz30gajmBKRXl3NUUM_aem_a-7gkXZCgy6Jn-6INV9ANg"
+          >LinkTree</a
+        >
+        <a href="#">Support Us</a>
+        <a href="cart.html" style="margin: 0">
+          <img class="cart-icon" src="assets/icons/cart.png" alt="Cart" />
+        </a>
+      </header>
+
+      <main>
+        <button onclick="goHome()" class="back-button">< ย้อนกลับ</button>
+
+        <section class="cart">
+          <h3 style="margin-bottom: 0; font-size: 20px; font-weight: 600">
+            ตะกร้าของคุณ
+          </h3>
+
+          <div class="cart-controls">
+            <p style="font-size: 14px">Item Name</p>
+            <div class="block-1">
+              <span id="cart-quantity">1</span>
+              <span>x</span>
+              <span class="price">฿129</span>
+              <button class="decrease-btn" onclick="decreaseQuantity()">
+                -
+              </button>
+              <button class="increase-btn" onclick="increaseQuantity()">
+                +
+              </button>
+            </div>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="support-section">
+            <p style="font-size: 14px">สนับสนุนพวกเรา</p>
+            <div class="input-bar">
+              <input
+                type="number"
+                id="support"
+                min="0"
+                value="0"
+                oninput="updateTotal()"
+              />$
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="shipping-section">
+      <h4>การจัดส่ง</h4>
+
+      <div class="shipping-option">
+        <p>EMS</p>
+        <span id="shipping-cost">30฿</span>
+      </div>
+      <div class="shipping-option">
+        <p>ทีมงาน</p>
+        <span>0฿</span>
+      </div>
+
+      <div class="total-section">
+        <h4>รวมทั้งหมด</h4>
+        <span id="total">129฿</span>
+      </div>
+
+      <div class="cart-actions">
+        <button onclick="continueShopping()">เลือกสินค้าต่อ</button>
+        <button onclick="confirmOrder()">ยืนยันคำสั่งซื้อ</button>
+      </div>
+    </div>
+  </body>
+</html>
