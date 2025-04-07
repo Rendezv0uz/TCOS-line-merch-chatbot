@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": " main.html"
+    "test": "start public/main.html"
   },
   "author": "",
   "license": "ISC",
