@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/detailStyles.css" />
+    <script defer src="../js/mainScript.js"></script>
+    <script defer src="../js/detailScript.js"></script>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="../assets/icons/logo.png" />
+      <a
+        href="https://linktr.ee/thecomingofstages_documentary?utm_source=linktree_admin_share&fbclid=PAZXh0bgNhZW0CMTEAAaaC45ozK93iGOUj_dmeCmfEM0Pzr2dT35lfQrKNvsz30gajmBKRXl3NUUM_aem_a-7gkXZCgy6Jn-6INV9ANg"
+        >LinkTree</a
+      >
+      <a href="#">Support Us</a>
+      <a href="cart.html" style="margin: 0">
+        <img class="cart" src="../assets/icons/cart.png" alt="Cart" />
+      </a>
+    </header>
+
+    <main>
+      <button onclick="goBack()" class="back-button">< ย้อนกลับ</button>
+
+      <section class="carousel">
+        <div class="carousel-container" id="carousel-track">
+          <img class="carousel-image" src="../assets/images/model1.jpg" />
+          <img class="carousel-image" src="../assets/images/model2.jpg" />
+          <img class="carousel-image" src="../assets/images/model3.jpg" />
+        </div>
+        <button class="btn-prev">‹</button>
+        <button class="btn-next">›</button>
+        <div class="carousel-indicators" id="carousel-indicators"></div>
+      </section>
+
+      <section id="product-details" class="product-details">
+        <p class="name">Name</p>
+        <p class="price">฿399</p>
+        <p class="description">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, sit!
+        </p>
+
+        <div class="line"></div>
+
+        <div class="quantity">
+          <label>จำนวน</label>
+          <div class="btn"></div>
+            <button class="decrease-quantity-btn">-</button>
+            <span id="quantity">1</span>
+            <button class="increase-quantity-btn">+</button>
+          </div>
+        </div>
+
+        <div class="size-selection">
+          <label>SIZE :</label>
+          <button>S</button>
+          <button>M</button>
+          <button>L</button>
+          <button>XL</button>
+        </div>
+
+        <div class="total-price">
+          <lable>รวมทั้งหมด</lable>
+          <span id="total">฿399</span>
+        </div>
+
+        <div class="order-btn">
+          <button class="reset-btn">รีเซ็ต</button>
+          <button class="addtocart-btn">เพิ่มลงตะกร้า</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
