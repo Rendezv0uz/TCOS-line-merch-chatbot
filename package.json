@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "start public/main.html"
+    "test": "start public/main.html",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +16,6 @@
     "@line/bot-sdk": "^9.8.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0"
-  }
+  },
+  "type": "module"
 }

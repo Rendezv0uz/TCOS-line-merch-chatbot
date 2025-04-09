@@ -1,9 +1,11 @@
-import express from "express";
+import express from 'express';
 const app = express();
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 dotenv.config();
 
-import * as line from "@line/bot-sdk";
+import * as line from '@line/bot-sdk';
+app.use(express.static('public'));
+// app.use(express.json());
 
 const config = {
   channelAccessToken: process.env.SECRETTOKEN,
@@ -12,7 +14,7 @@ const config = {
 // console.log("SECRETTOKEN:", process.env.SECRETTOKEN);
 // console.log("SECRETCODE:", process.env.SECRETCODE);
 // console.log(config);
-app.post("/webhook", line.middleware(config), (req, res) => {
+app.post('/webhook', line.middleware(config), (req, res) => {
   Promise.all([req.body.events.map(handleEvents)]).then((result) => {
     res.json(result);
   });
@@ -20,27 +22,27 @@ app.post("/webhook", line.middleware(config), (req, res) => {
 
 const client = new line.Client(config);
 
-client.pushMessage("U5b8fbde0d641e0506124acb40cc27109", [
-  { type: "text", text: `test push` },
+client.pushMessage('U5b8fbde0d641e0506124acb40cc27109', [
+  { type: 'text', text: `test push` },
 ]);
 
 const handleEvents = function (event) {
   console.log(event);
-  if (event.type !== "message" || event.message.type !== "text") {
+  if (event.type !== 'message' || event.message.type !== 'text') {
     return Promise.resolve(null);
   }
   return client.replyMessage(event.replyToken, [
     {
-      type: "text",
-      text: `reply ${event.message.text}`,
+      type: 'text',
+      text: `repliesss ${event.message.text}`,
     },
   ]);
 };
 
-app.get("/", (req, res) => {
-  res.json("ok");
+app.get('/', (req, res) => {
+  res.json('ok');
 });
 
-app.listen(3000, () => {
-  console.log("starting server on port 3000");
+app.listen(4000, () => {
+  console.log('starting server on port 4000');
 });

@@ -71,5 +71,3 @@ async function initLiff() {
     console.error('LIFF init failed', err);
   }
 }
-
-initLiff();
