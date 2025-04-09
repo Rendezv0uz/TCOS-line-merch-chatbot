@@ -1,3 +1,4 @@
+console.log('payment');
 // import { resetCart } from './detailScript';
 let total;
 let quantity = 1;
@@ -71,5 +72,3 @@ async function initLiff() {
     console.error('LIFF init failed', err);
   }
 }
-
-initLiff();

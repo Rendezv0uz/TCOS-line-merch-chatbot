@@ -1,6 +1,8 @@
+import { total } from './cartScript';
 const urlParams = new URLSearchParams(window.location.search);
 const id = Number(urlParams.get('id'));
-
+const decreaseQuantityBtn = document.getElementById('.decrease-quantity-btn');
+const increaseQuantityBtn = document.getElementById('.increase-quantity-btn');
 // TODO: fetch product detail from backend using id variable
 const product = {
   name: 'Item Name',
@@ -53,6 +55,18 @@ function goBack() {
 setUpProductDetail();
 renderQuantity();
 
+document.querySelector('.reset-btn').addEventListener('click', resetCart());
+
+export function resetCart() {
+  total = 0;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  decreaseQuantityBtn.addEventListener('click', decreaseQuantity);
+  increaseQuantityBtn.addEventListener('click', increaseQuantity);
+});
+
+// export
 // Carousel
 
 // let currentIndex = 0;
