@@ -8,9 +8,6 @@
   font-family: 'TorslipNantarat';
   src: url('../fonts/TorsilpNantarat.ttf') format('truetype');
 }
-* {
-  font-family: 'Noto Sans Thai', sans-serif;
-}
 
 body {
   margin: 0;
@@ -18,6 +15,18 @@ body {
   box-sizing: border-box;
   background-color: black;
   color: #ffffff;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1; /* Take up all available space */
 }
 
 .test {
@@ -62,111 +71,6 @@ header .cart {
   margin: 13px;
   margin-right: 0px;
 }
-/* 
-main {
-   padding: px; 
-} */
-
-/* .back-button {
-  all: unset;
-  font-size: 12px;
-  background-color: #1e1e1e;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-} */
-
-/* .back-button:hover {
-  background-color: #ffffff;
-  color: black;
-  animation: forwards;
-} */
-
-/* .carousel {
-    display: flex;
-    overflow: hidden;
-}
-
-.carousel img {
-    margin-top: 20px;
-    width: 100vw;
-    height: 376px;
-    object-fit: cover;
-} */
-
-/* .carousel {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-}
-
-.carousel-container {
-  display: flex;
-  overflow: hidden;
-}
-
-.carousel-container img {
-  margin-top: 20px;
-  width: 100vw;
-  height: 384px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.carousel button {
-  height: 32px;
-  width: 32px;
-  background: rgb(67, 67, 67);
-  border: none;
-  border-radius: 100%;
-  outline: none;
-
-  color: #fff;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-  font-size: 20px;
-  text-align: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 10px;
-
-  position: absolute;
-  top: 50%;
-}
-
-.btn-previous {
-  left: 0px;
-}
-
-.btn-next {
-  right: 0px;
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-} */
-
-/* .carousel-indicators .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-indicators .dot.active {
-  background-color: white;
-} */
 
 .product-details {
   position: relative;
@@ -178,8 +82,6 @@ main {
   margin-bottom: 10px;
   margin-left: 15px;
   font-family: 'Fachada';
-  /* margin-right: 5px; */
-  /* align-items: center; */
 }
 
 .price {
@@ -193,23 +95,38 @@ main {
 }
 
 .description {
-  /* margin: 0 0 10px 0; */
   margin-left: 15px;
   font-size: 14px;
   font-family: 'TorslipNantarat';
   margin-right: 80px;
 }
 
+.btn-back {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
 .four-images-group-dev {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  grid-template-columns: 60% 40%; /* 2 equal columns based on the container width (100vw) */
+  grid-template-rows: 45% 55%; /* Define custom height for each row */
   gap: 1px; /* optional spacing */
   width: 100%; /* Make container fit screen width */
   max-width: 100vw; /* Ensure it never exceeds viewport width */
-  aspect-ratio: 1; /* Make it square (2x2 grid) */
+  aspect-ratio: 1/1; /* Make it square (2x2 grid) */
   box-sizing: border-box;
-  /* padding: 8px; optional padding inside container */
+  position: relative;
 }
 
 .top-image {
@@ -219,54 +136,56 @@ main {
   display: block;
 }
 
+.image-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.image-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.auto-slide {
+  width: 100%;
+  height: 100%;
+  grid-row: 2; /* Second row */
+  grid-column: 1; /* First column */
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  /* position: absolute; */
+  z-index: 0;
+  position: absolute;
+}
+
+.auto-slide.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+.image-3 {
+  grid-row: 2; /* Second row */
+  grid-column: 2; /* Second column */
+}
+
+.scroll-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-row: 2;
+  grid-column: 1;
+}
+
 label {
   font-size: 16px;
 }
-
-/* .decrease-quantity-btn {
-    font-size: 16px;
-    right: 50px;
-    height: 32px;
-    width: 32px;
-    background-color: #1e1e1e;
-    color: white;
-    border-radius: 100%;
-    border: none;
-    }
-    
-          
-/* .quantity {
-            position: relative;
-            } */
-
-/* .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    gap: 10px;
-        } */
 
 .size-selection {
   margin: 20px 0px;
 }
 
-/* .total-price {
-  margin: 20px 0px;
-  position: relative;
-  display: flex;
-}
-
-.total-price #total {
-  position: absolute;
-  top: 0;
-  right: 10px;
-} */
 .line {
-  /* border-top: 1px solid #ffffff; */
   border: none;
   background-color: white;
   margin: 0;
@@ -275,7 +194,6 @@ label {
 }
 
 .order-container {
-  /* background-color: black; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -294,7 +212,6 @@ label {
   justify-content: center;
   background-color: #006745;
   z-index: 1;
-  /* margin: 0 auto; */
 }
 
 .add-to-basket {
@@ -306,51 +223,199 @@ label {
 }
 
 footer {
-  margin-bottom: 25px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 50px;
+  margin: 10px 0px 0px;
   height: 70px;
   background-color: black;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 5px; /* Add some padding */
+  padding: 0 10px;
 }
 
-.footer-content {
+.footer-left,
+.footer-right {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 10px;
-  margin-bottom: 30px;
+  align-items: center;
 }
 
-.logo-wrapper {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-  margin-left: auto; /* Push the logo-wrapper to the right */
+.contact-footer {
+  width: 100px; /* adjust size as needed */
+  height: auto;
+  object-fit: contain;
+  padding-bottom: 10px;
 }
 
 .logo-footer {
   width: 70px;
   height: 70px;
-  object-fit: contain;
-  display: flex;
-  align-items: end;
-}
-
-.social-item {
-  display: flex;
-  align-items: center; /* vertically center */
-  gap: 8px; /* space between icon and text */
-  color: white; /* optional: text color */
-  margin-left: 15px;
-}
-
-.footer-content-plus-image {
-  display: flex;
-  width: 100%;
-  justify-content: space-between; /* Ensure content is spaced out */
   margin-right: 5px;
+  object-fit: contain;
 }
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.carousel-indicators .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+  background-color: white;
+}
+
+/* 
+main {
+     padding: px; 
+} */
+
+/* .back-button {
+    all: unset;
+    font-size: 12px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+} */
+
+/* .back-button:hover {
+    background-color: #ffffff;
+    color: black;
+    animation: forwards;
+} */
+
+/* .carousel {
+        display: flex;
+        overflow: hidden;
+}
+
+.carousel img {
+        margin-top: 20px;
+        width: 100vw;
+        height: 376px;
+        object-fit: cover;
+} */
+
+/* .carousel {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-container img {
+    margin-top: 20px;
+    width: 100vw;
+    height: 384px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.carousel button {
+    height: 32px;
+    width: 32px;
+    background: rgb(67, 67, 67);
+    border: none;
+    border-radius: 100%;
+    outline: none;
+
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+
+    position: absolute;
+    top: 50%;
+}
+
+.btn-previous {
+    left: 0px;
+}
+
+.btn-next {
+    right: 0px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+} */
+
+/* .carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+    background-color: white;
+} */
+
+/* .decrease-quantity-btn {
+        font-size: 16px;
+        right: 50px;
+        height: 32px;
+        width: 32px;
+        background-color: #1e1e1e;
+        color: white;
+        border-radius: 100%;
+        border: none;
+        }
+        
+                    
+/* .quantity {
+                        position: relative;
+                        } */
+
+/* .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        gap: 10px;
+                } */
+
+/* .total-price {
+    margin: 20px 0px;
+    position: relative;
+    display: flex;
+}
+
+.total-price #total {
+    position: absolute;
+    top: 0;
+    right: 10px;
+} */

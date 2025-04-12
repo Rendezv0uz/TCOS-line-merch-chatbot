@@ -8,9 +8,6 @@
   font-family: 'TorslipNantarat';
   src: url('../fonts/TorsilpNantarat.ttf') format('truetype');
 }
-* {
-  font-family: 'Noto Sans Thai', sans-serif;
-}
 
 body {
   display: flex;
@@ -19,7 +16,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
   color: #ffffff;
 }
 
@@ -37,6 +35,11 @@ body {
   position: sticky;
 }
 
+h4 {
+  text-align: center;
+  font-family: 'TorslipNantarat';
+  font-weight: 100;
+}
 header {
   z-index: 10;
   top: 0px;
@@ -57,10 +60,11 @@ header .logo {
 }
 
 header a {
-  font-size: 12px;
+  font-size: 10px;
   color: #ffffff;
   text-decoration: none;
   margin: 13px;
+  font-family: 'Fachada';
 }
 
 header .cart-icon {
@@ -73,6 +77,7 @@ header .cart-icon {
 main {
   position: relative;
   padding: 20px 30px;
+  background-image: url('../assets/images/model2.jpg');
 }
 
 .back-button {
@@ -83,6 +88,7 @@ main {
   padding: 10px 20px;
   border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  opacity: 0.5;
 }
 
 .back-button:hover {
@@ -118,15 +124,19 @@ main {
   border: none;
 }
 
-.increase-btn {
+.increase-btn,
+.btn-back {
   font-size: 16px;
   right: 0px;
   height: 32px;
   width: 32px;
+  align-items: center;
+  justify-content: center;
   background-color: #1e1e1e;
   color: white;
   border-radius: 100%;
   border: none;
+  opacity: 0.7;
 }
 
 .line {
@@ -156,29 +166,82 @@ input {
   width: 90px;
 }
 
+.gridshipping {
+  width: 100%;
+  display: grid;
+  aspect-ratio: 1/1;
+  grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+  grid-template-rows: 1fr 1fr; /* Creates two equal-height rows */
+  gap: 0px; /* Adds space between grid items */
+  z-index: 2;
+  background-color: rgb(0, 0, 0);
+}
+
 .shipping-section {
   position: relative;
   bottom: 0;
-  background-color: #1e1e1e;
+  background-color: black;
   margin: 0;
-  padding: 10px 30px;
-  border-radius: 20px 20px 0 0;
+  padding: 0px;
 }
 
-.shipping-option {
+#shipping-cost {
+  color: black;
+  font-family: 'Fachada';
+  font-size: 25px;
+}
+
+.shipping-option-bottom {
+  /* background-color: #000000 !important; */
+  color: white;
+  z-index: 3;
+  font-family: 'TorslipNantarat';
+  font-size: 25px;
   position: relative;
   display: flex;
   align-items: center;
-  border-radius: 10px;
-  margin: 20px 0px;
-  padding: 0px 20px;
-  background-color: rgb(69, 69, 69);
+  justify-content: center;
+  border-radius: 50%; /* Makes the background circular */
+  background-color: black;
+  width: 100%; /* Set width to fill the whole container */
+  aspect-ratio: 1 / 1; /* Maintain a perfect circle by setting aspect ratio */
+  border: none; /* <-- removes the grey border */
+  outline: none; /* <-- extra insurance against borders */
+  box-shadow: none;
+}
+.shipping-option-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Makes the background circular */
+  background-color: rgb(255, 255, 255);
+  width: 100%; /* Set width to fill the whole container */
+  aspect-ratio: 1 / 1; /* Maintain a perfect circle by setting aspect ratio */
 }
 
-.shipping-option span {
-  position: absolute;
-  right: 0;
-  margin: 20px;
+.shipping-cell-white {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.shipping-option-bottom-invert {
+  color: white;
+  font-family: 'TorslipNantarat';
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: black;
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  border: none;
 }
 
 .total-section {
@@ -212,51 +275,31 @@ input {
 }
 
 footer {
-  margin-bottom: 25px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 50px;
+  margin: 10px 0px 0px;
   height: 70px;
   background-color: black;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 5px; /* Add some padding */
+  padding: 0 10px;
 }
 
-.footer-content {
+.footer-left,
+.footer-right {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 10px;
-  margin-bottom: 30px;
+  align-items: center;
 }
 
-.logo-wrapper {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-  margin-left: auto; /* Push the logo-wrapper to the right */
+.contact-footer {
+  width: 100px; /* adjust size as needed */
+  height: auto;
+  object-fit: contain;
+  padding-bottom: 10px;
 }
 
 .logo-footer {
   width: 70px;
   height: 70px;
-  object-fit: contain;
-  display: flex;
-  align-items: end;
-}
-
-.social-item {
-  display: flex;
-  align-items: center; /* vertically center */
-  gap: 8px; /* space between icon and text */
-  color: white; /* optional: text color */
-  margin-left: 15px;
-}
-
-.footer-content-plus-image {
-  display: flex;
-  width: 100%;
-  justify-content: space-between; /* Ensure content is spaced out */
   margin-right: 5px;
+  object-fit: contain;
 }

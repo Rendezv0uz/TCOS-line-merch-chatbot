@@ -8,15 +8,15 @@ const indicatorsContainer = document.getElementById('carousel-indicators');
 const imageBox2 = document.querySelector('.box2');
 const imageBox = document.querySelectorAll('.box');
 
-imageBox2.addEventListener('click', () => {
-  alert('Image Box 2 clicked!');
-});
+// imageBox2.addEventListener('click', () => {
+//   alert('Image Box 2 clicked!');
+// });
 
-imageBox.forEach((box) => {
-  box.addEventListener('click', () => {
-    alert('Image Box clicked!');
-  });
-});
+// imageBox.forEach((box) => {
+//   box.addEventListener('click', () => {
+//     alert('Image Box clicked!');
+//   });
+// });
 
 // Create indicators
 imageElems.forEach((_, i) => {

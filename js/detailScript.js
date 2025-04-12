@@ -1,25 +1,51 @@
-import { total } from './cartScript';
-const urlParams = new URLSearchParams(window.location.search);
-const id = Number(urlParams.get('id'));
-const decreaseQuantityBtn = document.getElementById('.decrease-quantity-btn');
-const increaseQuantityBtn = document.getElementById('.increase-quantity-btn');
-// TODO: fetch product detail from backend using id variable
-const product = {
-  name: 'Item Name',
-  description: 'testttttttttttttttttttttt',
-  imageUrl: '',
-  price: '129',
-};
-const productDetail = document.getElementById('product-details');
-const totalPrice = document.getElementById('total');
+// import { total } from './cartScript';
+// const decreaseQuantityBtn = document.getElementById('.decrease-quantity-btn');
+// const increaseQuantityBtn = document.getElementById('.increase-quantity-btn');
+// const { response } = require('express');
+// const fs = require('fs');
+// const http = require('http');
+// const replaceModule = require('../module/replaceInfo.js');
 
-function setUpProductDetail() {
-  productDetail.children[0].innerHTML = product.name;
-  productDetail.children[1].innerHTML = `฿${product.price}`;
-  productDetail.children[2].innerHTML = product.description;
-  totalPrice.innerHTML = `฿${product.price}`;
+// TODO: fetch product detail from backend using id variable
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
+
+  // Fetch the product data
+  fetch('../data/data.json')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Data loaded:', data); // Debugging log
+      const product = data.find((item) => item.id === id);
+      console.log('Product found:', product); // Debugging log
+
+      if (product) {
+        document.querySelector('.name').textContent = product.productName;
+        document.querySelector('.price').textContent = `฿${product.price}`;
+        document.querySelector('.description').textContent =
+          product.description;
+      } else {
+        console.error('Product not found with ID:', id);
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching product data:', error);
+      document.querySelector('.description').textContent =
+        'Error loading product details.';
+    });
+});
+
+function goHome() {
+  window.location.href = 'main.html';
 }
 
+document.querySelector('.btn-back').addEventListener('click', goHome);
+/*
 let quantity = 1;
 
 function increaseQuantity() {
@@ -55,16 +81,39 @@ function goBack() {
 setUpProductDetail();
 renderQuantity();
 
-document.querySelector('.reset-btn').addEventListener('click', resetCart());
+document.querySelector('.reset-btn').addEventListener('click', resetCart);
 
 export function resetCart() {
   total = 0;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  decreaseQuantityBtn.addEventListener('click', decreaseQuantity);
-  increaseQuantityBtn.addEventListener('click', increaseQuantity);
+  const images = document.querySelectorAll('.scroll-image .auto-slide');
+  let currentIndex = 0;
+  const totalImages = images.length;
+
+  function showNextImage() {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % totalImages;
+    images[currentIndex].classList.add('active');
+  }
+
+  // Show the first image
+  images[currentIndex].classList.add('active');
+
+  // Loop every 3 seconds
+  setInterval(showNextImage, 3000);
+
+  // Quantity buttons
 });
+
+document
+  .querySelector('.decrease-quantity-btn')
+  ?.addEventListener('click', decreaseQuantity);
+document
+  .querySelector('.increase-quantity-btn')
+  ?.addEventListener('click', increaseQuantity);
+*/
 
 // export
 // Carousel
