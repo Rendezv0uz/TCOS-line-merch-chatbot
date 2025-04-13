@@ -1,3 +1,4 @@
+/*
 console.log('payment');
 // import { resetCart } from './detailScript';
 let total;
@@ -9,14 +10,21 @@ function increaseQuantity() {
   quantity++;
   updateCart();
 }
+*/
 
+function goHome() {
+  window.location.href = 'cart.html';
+}
+/*
 function decreaseQuantity() {
   if (quantity > 1) {
     quantity--;
     updateCart();
   }
 }
+*/
 
+/*
 function updateCart() {
   document.getElementById('cart-quantity').textContent = quantity;
   updateTotal();
@@ -45,6 +53,7 @@ function resetCart() {
   document.getElementById('total').textContent = `0฿`;
 }
 
+*/
 const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
 
 async function initLiff() {
