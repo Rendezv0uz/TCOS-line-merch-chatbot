@@ -1,83 +1,90 @@
-/*
-console.log('payment');
-// import { resetCart } from './detailScript';
-let total;
-let quantity = 1;
-let price = 129;
-let shipping = 30;
-const totalPrice = document.getElementById('total');
-function increaseQuantity() {
-  quantity++;
-  updateCart();
-}
-*/
 
 function goHome() {
   window.location.href = 'cart.html';
 }
-/*
-function decreaseQuantity() {
-  if (quantity > 1) {
-    quantity--;
-    updateCart();
-  }
-}
-*/
 
-/*
-function updateCart() {
-  document.getElementById('cart-quantity').textContent = quantity;
-  updateTotal();
-}
+// const form = document.querySelector('.formlol');
+// form.addEventListener("submit", function(e){
+  
+//   const formData ={
+//     name : form.name.value,
+//     tel : form.tel.value,
+//     time: form.time.value,
+//     date: form.date.value,
+//     price: form.pricePay.value,
+//     contact: form.contact.value,
+//     email: form.mail.value,
+//     housenumber: form.home.value,
+//     mooh: form.mooh.value,
+//     soi: form.soi.value,
+//     kwang: form.kwang.value,
+//     territory: form.territory.value,
+//     province: form.province.value,
+//     zipcode: form.zipcode.value,
+//   }
+  
+//   fetch("https://script.google.com/macros/s/AKfycbyE51R1PoBqTgiqRo-myc-ONPhCwcGsXBm4M5lsDZ7CmL0TwDGWBm10hdJeLfL0q72Q/exec" , {
+//     method : "POST",
+//     body : JSON.stringify(formData),
+//     headers: {
+//       "Content-Type": "application/json", // important!
+//     },
+//   })
+//   .then(res => res.text())
+//   .then(data => {
+//     form.reset()
+//   })
+//   .catch(err => console.error("Error",err))
+//   alert("ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่อีกครั้ง");
+// })
 
-function updateTotal() {
-  let supportAmount = parseFloat(document.getElementById('support').value) || 0;
-  let total = quantity * price + shipping + supportAmount;
-  document.getElementById('total').textContent = `${total}฿`;
-}
+const form = document.forms['sheet'];
 
-function goHome() {
-  window.location.href = 'main.html';
-}
+form.addEventListener("submit", e=> {
+  e.preventDefault();
 
-function continueShopping() {
-  window.location.href = 'main.html'; // Change to your home page
-}
+  // const formData = new FormData(form);
 
-function confirmOrder() {
-  alert(totalPrice.textContent); //webhook here
-  resetCart();
-}
+  fetch("https://script.google.com/macros/s/AKfycbw-4PferIyEje48rKJahGqW6WiyWVdYHrBzPzj6kj6WhEcv_lGKEsnrUUbJEKw1ORyx/exec", {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(data => {
+    alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+    form.reset();
+  })
+  .catch(err => {
+    console.error("Error:", err);
+    alert("ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่");
+  });
+});
 
-function resetCart() {
-  document.getElementById('total').textContent = `0฿`;
-}
 
-*/
-const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
 
-async function initLiff() {
-  try {
-    await liff.init({ liffId: LIFF_ID });
+// const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
 
-    // Setup button listener after LIFF is ready
-    document
-      .getElementById('confirmBtn')
-      .addEventListener('click', async () => {
-        const price = 199;
+// async function initLiff() {
+//   try {
+//     await liff.init({ liffId: LIFF_ID });
 
-        if (liff.isInClient()) {
-          await liff.sendMessages([
-            {
-              type: 'text',
-              text: `Order confirmed ✅\nTotal: ฿${price}`,
-            },
-          ]);
-        }
+//     // Setup button listener after LIFF is ready
+//     document
+//       .getElementById('confirmBtn')
+//       .addEventListener('click', async () => {
+//         const price = 199;
 
-        liff.closeWindow();
-      });
-  } catch (err) {
-    console.error('LIFF init failed', err);
-  }
-}
+//         if (liff.isInClient()) {
+//           await liff.sendMessages([
+//             {
+//               type: 'text',
+//               text: `Order confirmed ✅\nTotal: ฿${price}`,
+//             },
+//           ]);
+//         }
+
+//         liff.closeWindow();
+//       });
+//   } catch (err) {
+//     console.error('LIFF init failed', err);
+//   }
+// }

@@ -74,6 +74,7 @@ header .cart-icon {
 main {
   position: relative;
   padding: 20px 30px;
+  background-image: url(../assets/addAndreset/QR_Background.svg);
 }
 
 .btn-back {
@@ -161,9 +162,20 @@ input {
 .shipping-section {
   position: relative;
   bottom: 0;
-  background-color: #524d8e;
+  background-color: #000000;
   margin: 0;
   padding: 10px 30px;
+}
+
+#submitting{
+  background-image: url(../assets/addAndreset/confirm_button.svg);
+  font-family: 'TorslipNantarat';
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  font-size: 20px;
+  height: 150px;
 }
 
 .shipping-option {
@@ -204,9 +216,68 @@ input {
   font-family: 'TorslipNantarat';
 }
 
+.shipping-option input[type='time'] {
+  width: 100%; /* Full width inside the .shipping-option */
+  height: 40px;
+  /* margin-top: 8px; */
+  padding: 10px;
+  border: 1px white solid;
+  /* border-radius: 5px; */
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'TorslipNantarat';
+}
+
+.shipping-option input[type='date'] {
+  width: 100%; /* Full width inside the .shipping-option */
+  height: 40px;
+  /* margin-top: 8px; */
+  padding: 10px;
+  border: 1px white solid;
+  /* border-radius: 5px; */
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'TorslipNantarat';
+}
+
+
+.shipping-option input[type='email'] {
+  width: 100%; /* Full width inside the .shipping-option */
+  height: 40px;
+  /* margin-top: 8px; */
+  padding: 10px;
+  border: 1px white solid;
+  /* border-radius: 5px; */
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'TorslipNantarat';
+}
 /* .formlol {
   z-index: 1;
 } */
+
+.shipping-option input[type='number'] {
+  width: 100%; /* Full width inside the .shipping-option */
+  height: 40px;
+  /* margin-top: 8px; */
+  padding: 10px;
+  border: 1px white solid;
+  /* border-radius: 5px; */
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'TorslipNantarat';
+}
+
+input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Remove arrows in Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 
 .total-section {
   position: relative;

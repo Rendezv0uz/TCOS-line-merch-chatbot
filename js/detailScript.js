@@ -20,9 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then((data) => {
-      console.log('Data loaded:', data); // Debugging log
       const product = data.find((item) => item.id === id);
-      console.log('Product found:', product); // Debugging log
 
       if (product) {
         document.querySelector('.name').textContent = product.productName;

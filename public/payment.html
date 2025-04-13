@@ -30,9 +30,6 @@
           <img src="../assets/images/qr.jpg" class="qr-code" alt="QR Code" />
          
           </div>
-
-          
-            
             </div>
           </div>
         </section>
@@ -42,63 +39,78 @@
     <div class="shipping-section">
       <!-- <h4>การจัดส่ง</h4> -->
 
-    <form action="#" method="post" class="formlol">
+    <form action="#" method="post" class="formlol" name="sheet">
       <label class="shipping-option">
         ชื่อ-นามสกุล
-        <input type="text" name="ems" placeholder="เช่น นายพีรภัทร ภูริภัทรพันธุ์" required />
+        <input type="text" name="name" placeholder="เช่น นายการมา ของเวที" required />
       </label>
       
       <label class="shipping-option">
         เบอร์โทรศัพท์
-        <input type="text" name="team1" placeholder="เช่น 099-1641303" required />
+        <input type="text" name="tel" placeholder="เช่น 099-1234567" required />
+      </label>
+
+      <label class="shipping-option">
+        เวลาที่ชำระเงิน
+        <input type="time" name="time" placeholder="เช่น นายการมา ของเวที" required />
+      </label>
+
+      <label class="shipping-option">
+        แจ้งวันที่ชำระเงิน
+        <input type="date" name="date" placeholder="เช่น นายการมา ของเวที" id="dateInput" required />
+      </label>
+
+      <label class="shipping-option">
+        ยอดที่ชำระ
+        <input type="number" name="pricePay" placeholder="ใส่แค่ตัวเลข" required />
       </label>
       
       <label class="shipping-option">
         ช่องทางติดต่อ
-        <input type="text" name="team3" placeholder="Line/Facebook/Instagram" required />
+        <input type="text" name="contact" placeholder="Line/Facebook/Instagram" required />
       </label>
 
       <label class="shipping-option">
         Email
-        <input type="text" name="team3" placeholder="เช่น TCOS@gmail.com" required />
+        <input type="email" name="mail" placeholder="เช่น TCOS@gmail.com" required />
       </label>
 
       <label class="shipping-option">
         บ้านเลขที่
-        <input type="text" name="team2" placeholder="" required />
+        <input type="text" name="home" placeholder="" required />
       </label>
   
       <label class="shipping-option">
         หมู่
-        <input type="text" name="team3" placeholder="ถ้าไม่มีให้ใส่ -" required />
+        <input type="text" name="mooh" pattern="\d+|-" placeholder="ถ้าไม่มีให้ใส่ -" required />
       </label>
 
       <label class="shipping-option">
         ซอย
-        <input type="text" name="team3" placeholder="ถ้าไม่มีให้ใส่ -" required />
+        <input type="text" name="soi" pattern="\d+|-" placeholder="ถ้าไม่มีให้ใส่ -" required />
       </label>
 
       <label class="shipping-option">
         แขวง/ตำบล
-        <input type="text" name="team3" placeholder="" required />
+        <input type="text" name="kwang" placeholder="" required />
       </label>
 
       <label class="shipping-option">
         เขต/อำเภอ
-        <input type="text" name="team3" placeholder="" required />
+        <input type="text" name="territory" placeholder="" required />
       </label>
 
       <label class="shipping-option">
         จังหวัด
-        <input type="text" name="team3" placeholder="" required />
+        <input type="text" name="province" placeholder="" required />
       </label>
 
       <label class="shipping-option">
         เลขที่ไปรษณีย์
-        <input type="text" name="team3" placeholder="XXXXX" required />
+        <input type="number" name="zipcode" placeholder="XXXXX" required />
       </label>
 
-      <input type="submit" value="Submit">
+      <input type="submit" value="ยืนยันการชำระเงิน" id ="submitting">
 
     </form>
      
