@@ -75,8 +75,51 @@ header .cart {
 .product-details {
   position: relative;
   padding: 0;
+  
+}
+.marginTop{
+  margin-top: 10px;
+  /* aspect-ratio: 2/1; */
 }
 
+.cartAmountWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .amountInCart{
+  display: flex;
+} */
+
+.order-btn-afterclick {
+  font-size: 23px;
+  width: 100%;
+  
+  color: white;
+  display: flex;
+  background-color: #006745;
+  z-index: 1;
+}
+
+.wrapper-withoutLine{
+  aspect-ratio: 2/1;
+  background-color: #006745;
+}
+
+.amount-afterclick{
+  margin-left: 5px;
+}
+
+.button-minus-plus{
+  margin-right: 15px;
+  align-items: center;
+  display: flex;
+}
+
+.upper{
+  margin-bottom: 0px;
+}
 .name {
   font-size: 22px;
   margin-bottom: 10px;
@@ -177,7 +220,7 @@ header .cart {
   grid-column: 1;
 }
 
-label {
+.label {
   font-size: 16px;
 }
 
@@ -220,6 +263,55 @@ label {
   justify-content: center;
   align-items: center;
   display: flex;
+  color: black;
+  font-size: 100px;
+  margin-top: 15px;
+}
+
+
+.plus{
+  border-radius: 50%;
+  height: 75px;
+  aspect-ratio: 1/1;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 45px;
+  font-weight: 100;
+
+}
+
+.minus{
+  border-radius: 50%;
+  height: 75px;
+  aspect-ratio: 1/1;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 30px;
+}
+
+#resetButton{
+  margin-left: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: 'Fachada';
+  width: 50%;
+  height: 29px ;
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+#addToBasketButton{
+  margin-right: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: 'Fachada';
+  width: 50%;
+  height: 29px ;
+  font-size: 10px;
 }
 
 footer {

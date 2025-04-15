@@ -3,7 +3,12 @@ let total;
 let quantity = 1;
 let price = 129;
 let shipping = 30;
+const emsBtn = document.querySelector('.viaEms');
+const staffBtn = document.querySelector('.viaStaff');
 const totalPrice = document.getElementById('total');
+
+
+
 function increaseQuantity() {
   quantity++;
   updateCart();
@@ -36,7 +41,7 @@ function continueShopping() {
 }
 
 function confirmOrder() {
-  alert(totalPrice.textContent); //webhook here
+  window.location.href = 'payment.html'
   resetCart();
 }
 
@@ -44,30 +49,47 @@ function resetCart() {
   document.getElementById('total').textContent = `0฿`;
 }
 
-const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
+document.querySelector('.confirming').addEventListener('click', confirmOrder)
 
-async function initLiff() {
-  try {
-    await liff.init({ liffId: LIFF_ID });
-
-    // Setup button listener after LIFF is ready
-    document
-      .getElementById('confirmBtn')
-      .addEventListener('click', async () => {
-        const price = 199;
-
-        if (liff.isInClient()) {
-          await liff.sendMessages([
-            {
-              type: 'text',
-              text: `Order confirmed ✅\nTotal: ฿${price}`,
-            },
-          ]);
-        }
-
-        liff.closeWindow();
-      });
-  } catch (err) {
-    console.error('LIFF init failed', err);
-  }
+function handleClick(clickedBtn, otherBtn) {
+  clickedBtn.classList.add('beingClicked');
+  otherBtn.classList.remove('beingClicked');
 }
+
+emsBtn.addEventListener('click', () => {
+  handleClick(emsBtn, staffBtn);
+});
+
+staffBtn.addEventListener('click', () => {
+  handleClick(staffBtn, emsBtn);
+});
+
+document.querySelector('.continueShop').addEventListener('click', goHome)
+document.querySelector('.btn-back').addEventListener('click', goHome)
+// const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
+
+// async function initLiff() {
+//   try {
+//     await liff.init({ liffId: LIFF_ID });
+
+//     // Setup button listener after LIFF is ready
+//     document
+//       .getElementById('confirmBtn')
+//       .addEventListener('click', async () => {
+//         const price = 199;
+
+//         if (liff.isInClient()) {
+//           await liff.sendMessages([
+//             {
+//               type: 'text',
+//               text: `Order confirmed ✅\nTotal: ฿${price}`,
+//             },
+//           ]);
+//         }
+
+//         liff.closeWindow();
+//       });
+//   } catch (err) {
+//     console.error('LIFF init failed', err);
+//   }
+// }

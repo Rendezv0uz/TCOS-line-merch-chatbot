@@ -6,7 +6,8 @@
 // const http = require('http');
 // const replaceModule = require('../module/replaceInfo.js');
 
-// TODO: fetch product detail from backend using id variable
+let product;
+
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then((data) => {
-      const product = data.find((item) => item.id === id);
+       product = data.find((item) => item.id === id);
 
       if (product) {
         document.querySelector('.name').textContent = product.productName;
@@ -48,52 +49,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
 function goHome() {
   window.location.href = 'main.html';
 }
 
-document.querySelector('.btn-back').addEventListener('click', goHome);
-/*
+//quantity Part
+
+let defaultCart ={
+  umbrella : 0,
+  blanket : 0,
+  cardholder : 0,
+  keychains : 0,
+  bandanas : 0,
+  tshirt : 0,
+}
+
 let quantity = 1;
+
+function getCart(){
+  const cart = localStorage.getItem('cart');
+  return cart ? JSON.parse(cart) : defaultCart;
+}
+
+function saveCart(cart){
+  localStorage.setItem('cart', JSON.stringify(cart))
+}
+
+function updateProductAmount(productId, newAmount){
+  const cart = getCart();
+  cart[productId] += newAmount;
+  saveCart(cart);
+}
+
+function resetCart(){
+  quantity = 1
+  // document.querySelector('.amount-afterclick').textContent = String(quantity).padStart(2,'0')
+  updateCart()
+  
+}
+
+function updateCart() {
+  document.querySelector('.amount-afterclick').textContent = String(quantity).padStart(2, '0');
+  // updateTotal();
+}
 
 function increaseQuantity() {
   quantity++;
   updateCart();
+  disableButtonTemporarily(document.querySelector('.plus'));
 }
 
 function decreaseQuantity() {
   if (quantity > 1) {
     quantity--;
     updateCart();
+    disableButtonTemporarily(document.querySelector('.minus'));
+
   }
 }
 
-function updateCart() {
-  document.getElementById('quantity').textContent = quantity;
-  updateTotal();
+function disableButtonTemporarily(button) {
+  button.disabled = true;
+  setTimeout(() => {
+    button.disabled = false;
+  }, 200); // Disable the button for x second
 }
 
-function updateTotal() {
-  let total = quantity * product.price;
-  document.getElementById('total').textContent = `฿${total}`;
-}
+document.querySelector('.plus').addEventListener('click', ()=>{
+  setTimeout(()=>{
+    increaseQuantity()
+  },300)})
 
-function renderQuantity() {
-  document.getElementById('quantity').innerHTML = quantity;
-}
+document.querySelector('.minus').addEventListener('click', ()=>{
+    setTimeout(()=>{
+      decreaseQuantity()
+    },300)})
+    
+document.getElementById('addToBasketButton').addEventListener('click', ()=>{
+  setTimeout(()=>{
+    updateProductAmount(product.id, quantity);
+    resetCart();
+    alert('added');
+    goHome()
+  },300)})
 
-function goBack() {
-  window.history.back();
-}
+document.getElementById('resetButton').addEventListener('click', ()=>{
+      setTimeout(()=>{
+        resetCart()
+      },300)})
+//go back button
+document.querySelector('.btn-back').addEventListener('click', goHome);
 
-setUpProductDetail();
-renderQuantity();
-
-document.querySelector('.reset-btn').addEventListener('click', resetCart);
-
-export function resetCart() {
-  total = 0;
-}
+/*
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.scroll-image .auto-slide');

@@ -76,8 +76,63 @@ header .cart-icon {
 
 main {
   position: relative;
-  padding: 20px 30px;
-  background-image: url('../assets/images/model2.jpg');
+  display: flex;
+  z-index: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#totalPrice{
+  max-width: 100vw;
+  padding: 0 0 0 0px;
+  margin: 0 ;
+}
+
+.amount, .priceOne{
+  color: black;
+}
+
+.blankPrice{
+  background-color: #f1e5d3;
+  aspect-ratio: 4.35/1;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Fachada';
+  font-size: 33px;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.decrease-btn-template {
+  font-size: 45px;
+  font-weight: bolder;
+  height: 55px;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  /* color: white; */
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: rgb(0, 0, 0);
+  font-family: 'Fachada';
+  /* text-align: center; */
+  
+  /* padding-bottom: 20px; */
+  /* padding-bottom: 20px; */
+}
+
+.increase-btn-template {
+  font-size: 45px;
+  font-weight: bolder;
+  height: 55px;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  /* color: white; */
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: rgb(0, 0, 0);
+  font-family: 'Fachada';
+  /* text-align: center; */
+  
 }
 
 .back-button {
@@ -183,6 +238,7 @@ input {
   background-color: black;
   margin: 0;
   padding: 0px;
+  z-index: 2;
 }
 
 #shipping-cost {
@@ -302,4 +358,9 @@ footer {
   height: 70px;
   margin-right: 5px;
   object-fit: contain;
+}
+
+.beingClicked{
+  background-color: blue !important;
+  transition: all 0.3s ease-in-out;
 }

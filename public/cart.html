@@ -23,13 +23,20 @@
     
     <main>
       <div class="content-wrapper">
-        <button onclick="goHome()" class="btn-back"><</button>
-
+        <button  class="btn-back"><</button>
+        
         <section class="cart">
-          <h3 style="margin-bottom: 0; font-size: 20px; font-weight: 600">
-            ตะกร้าของคุณ
-          </h3>
-
+          
+          <img src="../assets/cartAssets/Bottom-Support.png" id="totalPrice">
+          <div class="blankPrice">
+            <div class="amount">X1</div>
+            <div class="priceOne">฿129</div>
+            <div>
+              <button class="decrease-btn-template">+</button>
+            <button class="increase-btn-template">-</button>
+            </div>
+            
+          </div>
           <div class="cart-controls">
             <p style="font-size: 14px">Item Name</p>
             <div class="block-1">
@@ -75,21 +82,21 @@
     </div>
     
     <div class="gridshipping">
-      <div class="shipping-option-top">
+      <div class="shipping-option-top viaEms">
         <p id="shipping-cost">VIA EMS XX฿</p>
       </div>
 
     
-      <div class="shipping-option-top">
+      <div class="shipping-option-top viaStaff">
         <p id="shipping-cost">VIA STAFF 0฿</p>
       </div>
       
       <div class="shipping-cell-white">
-        <button onclick="continueShopping()" class="shipping-option-bottom">เลือกสินค้าต่อ</button>
+        <button class="shipping-option-bottom continueShop">เลือกสินค้าต่อ</button>
       </div>
 
       <div class="shipping-cell-white">
-        <button onclick="confirmOrder()" class="shipping-option-bottom">ยืนยันการสั่งซื้อ</button>
+        <button class="shipping-option-bottom confirming">ยืนยันการสั่งซื้อ</button>
       </div>
        
        
