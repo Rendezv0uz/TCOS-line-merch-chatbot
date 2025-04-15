@@ -12,6 +12,8 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
   box-sizing: border-box;
   background-color: black;
   color: #ffffff;
@@ -223,22 +225,23 @@ label {
 }
 
 footer {
-  margin: 10px 0px 0px;
+  bottom: 0px;
+  position: absolute;
+  margin: 0;
   height: 70px;
+  width: 100vw;
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 0 10px;
+  padding: 10px 10px 10px 10px;
+
 }
 
-.footer-left,
-.footer-right {
-  display: flex;
-  align-items: center;
-}
+
 
 .contact-footer {
+  position: absolute;
   width: 100px; /* adjust size as needed */
   height: auto;
   object-fit: contain;
@@ -246,6 +249,8 @@ footer {
 }
 
 .logo-footer {
+  position: absolute;
+  right: 30px;
   width: 70px;
   height: 70px;
   margin-right: 5px;
