@@ -6,7 +6,7 @@
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="../css/cartStyles.css" />
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script defer src="../js/cartScript.js"></script>
+    <script defer src="../js/cartScript.js" type="module"></script>
   </head>
   <body>
     <header>
@@ -27,53 +27,26 @@
         
         <section class="cart">
           
-          <img src="../assets/cartAssets/Bottom-Support.png" id="totalPrice">
+          <img src="../assets/cartAssets/Bottom-Support.png" id="supportMoney" class="supportme">
           <div class="blankPrice">
             <div class="amount">X1</div>
-            <div class="priceOne">฿129</div>
+            <div class="priceOne">฿0</div>
             <div>
-              <button class="decrease-btn-template">+</button>
-            <button class="increase-btn-template">-</button>
+              <button class="increase-btn-template">+</button>
+            <button class="decrease-btn-template">-</button>
             </div>
-            
+            <div class="line"></div>
           </div>
-          <div class="cart-controls">
-            <p style="font-size: 14px">Item Name</p>
-            <div class="block-1">
-              <span id="cart-quantity">1</span>
-              <span>x</span>
-              <span class="price">฿129</span>
-              <button class="decrease-btn" onclick="decreaseQuantity()">
-                -
-              </button>
-              <button class="increase-btn" onclick="increaseQuantity()">
-                +
-              </button>
-            </div>
-          </div>
-
-          <div class="line"></div>
-
-          <div class="support-section">
-            <p style="font-size: 14px">สนับสนุนพวกเรา</p>
-            <div class="input-bar">
-              <input
-                type="number"
-                id="support"
-                min="0"
-                value="0"
-                oninput="updateTotal()"
-              />$
-            </div>
-          </div>
+          
         </section>
       </main>
     </div>
 
 
-    <h4>รวมทั้งหมด</h4>
+    
     <div class="total-section">
-      <span id="total">129฿</span>
+      <h4>รวมทั้งหมด</h4>
+      <span id="total">0฿</span>
     </div>
 
     

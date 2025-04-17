@@ -39,7 +39,14 @@ h4 {
   text-align: center;
   font-family: 'TorslipNantarat';
   font-weight: 100;
+  margin-left: 10px;
 }
+
+#total{
+  margin-right: 10px;
+  font-family: 'Fachada';
+}
+
 header {
   z-index: 10;
   top: 0px;
@@ -82,7 +89,16 @@ main {
   overflow-x: hidden;
 }
 
-#totalPrice{
+.amount{
+  display: flex;
+  align-items: center;
+}
+
+#shirtsize{
+  font-size: 10px;
+}
+
+#supportMoney{
   max-width: 100vw;
   padding: 0 0 0 0px;
   margin: 0 ;
@@ -196,7 +212,7 @@ main {
 
 .line {
   border-top: 1px solid #ffffff;
-  margin: 10px 0 10px 0;
+  margin: 0px 0 0px 0;
 }
 
 .support-section {

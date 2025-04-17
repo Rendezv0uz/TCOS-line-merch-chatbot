@@ -24,6 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
        product = data.find((item) => item.id === id);
 
       if (product) {
+        if(product.requireSize){
+          const tshirtSizeDiv = document.createElement('div');
+          tshirtSizeDiv.className = 'tshirtSize';
+          tshirtSizeDiv.innerHTML = `
+            <img src="../assets/realproduct/tshirt/shirtsize.svg">
+              <select id="sizeSelection" name="size-select">
+                <option class="size" value="S">S</option>
+                <option class="size" value="M">M</option>
+                <option class="size" value="L">L</option>
+                <option class="size" value="XL">XL</option>
+                <option class="size" value="XXL">XXL</option>
+                <option class="size" value="XXXL">3XL</option>
+              </select>
+          `;
+          const wrapper = document.querySelector('.wrapper-withoutLine');
+          const secondCartWrapper = wrapper.querySelectorAll('.cartAmountWrapper')[1];
+          wrapper.insertBefore(tshirtSizeDiv, secondCartWrapper);
+        }
         document.querySelector('.name').textContent = product.productName;
         document.querySelector('.price').textContent = `฿${product.price}`;
         document.querySelector('.description').textContent =
@@ -57,29 +75,43 @@ function goHome() {
 
 //quantity Part
 
-let defaultCart ={
+  let defaultCart ={
   umbrella : 0,
   blanket : 0,
   cardholder : 0,
   keychains : 0,
   bandanas : 0,
-  tshirt : 0,
+  tshirt : {
+    S: 0,
+    M: 0,
+    L: 0,
+    XL: 0,
+    XXL: 0,
+    XXXL : 0,
+  },
 }
 
 let quantity = 1;
-
+let size = null;
 function getCart(){
   const cart = localStorage.getItem('cart');
-  return cart ? JSON.parse(cart) : defaultCart;
+  return cart ? JSON.parse(cart) : structuredClone(defaultCart);
 }
 
 function saveCart(cart){
   localStorage.setItem('cart', JSON.stringify(cart))
 }
 
-function updateProductAmount(productId, newAmount){
+function updateProductAmount(productId, size = null, newAmount){
   const cart = getCart();
-  cart[productId] += newAmount;
+  if(size){ //tshirt
+    if(!cart[productId]) cart[productId] = {}; //productId = tshirt here
+    if(!cart[productId][size]) cart[productId][size] = 0; 
+    cart[productId][size] += newAmount;
+  }else{ //not tshirt
+    if(!cart[productId]) cart[productId] = 0;
+    cart[productId] += newAmount;
+  }
   saveCart(cart);
 }
 
@@ -129,9 +161,10 @@ document.querySelector('.minus').addEventListener('click', ()=>{
     
 document.getElementById('addToBasketButton').addEventListener('click', ()=>{
   setTimeout(()=>{
-    updateProductAmount(product.id, quantity);
+    const sizeSelect = document.getElementById('sizeSelection');
+    const size = sizeSelect ? sizeSelect.value : null;
+    updateProductAmount(product.id, size, quantity);
     resetCart();
-    alert('added');
     goHome()
   },300)})
 
@@ -141,6 +174,9 @@ document.getElementById('resetButton').addEventListener('click', ()=>{
       },300)})
 //go back button
 document.querySelector('.btn-back').addEventListener('click', goHome);
+
+
+//export
 
 /*
 

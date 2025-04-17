@@ -42,7 +42,7 @@ const form = document.forms['sheet'];
 
 form.addEventListener("submit", e=> {
   e.preventDefault();
-
+  
   // const formData = new FormData(form);
 
   fetch("https://script.google.com/macros/s/AKfycbwsUdGEKfRPbq0UmokBfZkLb-R84kWrUSFVMmzxDuXct_VqJadl6TjxwTLxeAM_24IS/exec", {
@@ -51,6 +51,7 @@ form.addEventListener("submit", e=> {
   })
   .then(data => {
     alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+    localStorage.clear();
     form.reset();
   })
   .catch(err => {

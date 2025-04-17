@@ -14,7 +14,9 @@
     "../assets/realproduct/blanket/blanketTopLeft.jpg"
     ],
     "description": "ร่มกันยูวีลวดลายเครื่องดนตรีที่สะท้อนบรรยากาศสนุกสนานของแสง สี เสียง และจังหวะดนตรีใน The Hidden Saloon พร้อมปกป้องคุณจากฝนและรังสี UV ได้อย่างมีประสิทธิภาพในทุกวัน",
-    "price": 123
+    "price": 123,
+    "cartImageSrc" : "../assets/cartAssets/Umbrellas.png",
+    "requireSize" : false
   },
   {
     "id": "blanket",
@@ -31,7 +33,9 @@
     "../assets/realproduct/blanket/blanketTopLeft.jpg"
     ],
     "description": "ผ้าห่มเนื้อนุ่มที่ออกแบบเป็นพิเศษด้วยลวดลายแผนที่จากละครเวที The Hidden Saloon เพื่อให้ผู้ชมได้สัมผัสทั้งความอบอุ่นทางกาย และความใกล้ชิดกับเนื้อเรื่องมากยิ่งขึ้น",
-    "price": 456
+    "price": 456,
+    "cartImageSrc" : "../assets/cartAssets/Blankets.png",
+    "requireSize" : false
   },
   {
     "id": "cardholder",
@@ -48,7 +52,9 @@
     "../assets/realproduct/blanket/blanketTopLeft.jpg"
     ],
     "description": "ที่ใส่บัตรดีไซน์สนุก มาพร้อมสายคล้อง สะท้อนจังหวะของเสียงเพลงผ่านลวดลายที่ไม่เหมือนใคร ผสมผสานความสวยงามและความบันเทิงของดนตรีไว้ในชิ้นเดียว",
-    "price": 789
+    "price": 789,
+    "cartImageSrc" : "../assets/cartAssets/Cardholder.png",
+    "requireSize" : false
   },
   {
     "id": "keychains",
@@ -65,7 +71,9 @@
     "../assets/realproduct/blanket/blanketTopLeft.jpg"
     ],
     "description": "คอลเลกชันถุงสุ่มพวงกุญแจจาก The Hidden Saloon ที่รวบรวมตัวละครน่ารักไว้ถึง 5 แบบ พร้อมเทปอัดเสียงจิ๋วในทุกเซต สำหรับบันทึกข้อความส่งต่อให้คนที่คุณรัก",
-    "price": 101112
+    "price": 101112,
+    "cartImageSrc" : "../assets/cartAssets/Keychains.png",
+    "requireSize" : false
   },
   {
     "id": "bandanas",
@@ -82,7 +90,9 @@
     "../assets/realproduct/blanket/blanketTopLeft.jpg"
     ],
     "description": "สะท้อนกลิ่นอายแฟชั่นยุค 60 ผ่านผ้าอเนกประสงค์สองลวดลาย ที่สามารถโพกหัว ผูกกระเป๋า หรือใช้เป็นเครื่องประดับลุค เพื่อเพิ่มเอกลักษณ์ให้กับการแต่งกายของคุณอย่างมีสไตล์",
-    "price": 131415
+    "price": 131415,
+    "cartImageSrc" : "../assets/cartAssets/Bandanas.png",
+    "requireSize" : false
   },
   {
     "id": "tshirt",
@@ -99,6 +109,8 @@
     "../assets/realproduct/blanket/blanketTopLeft.jpg"
     ],
     "description": "เสื้อยืดเนื้อผ้านุ่ม ใส่สบาย มาพร้อมลวดลายนักดนตรีสุดน่ารักที่บรรเลงเพลงอย่างสนุกสนานในบาร์ The Hidden Saloon ใส่ได้ทุกวัน เพิ่มสีสันให้กับสไตล์ของคุณ",
-    "price": 555
+    "price": 555,
+    "cartImageSrc" : "../assets/cartAssets/T-shirt.png",
+    "requireSize" : true
   }
 ]

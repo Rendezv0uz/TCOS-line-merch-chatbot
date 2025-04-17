@@ -102,6 +102,29 @@ header .cart {
   z-index: 1;
 }
 
+.tshirtSize{
+  border: 1px white solid;
+  /* padding-left: 15px; */
+  /* padding-right: 10px; */
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#sizeSelection{
+  color: white;
+  border-top: 1px white solid;
+  height: 30px;
+  background-color: transparent;
+  width: 100%;
+  font-family: 'Fachada';
+  text-align: center;
+}
+
+.size{
+  background-color: #006745;
+}
+
 .wrapper-withoutLine{
   aspect-ratio: 2/1;
   background-color: #006745;
