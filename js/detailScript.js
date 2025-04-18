@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then((data) => {
-       product = data.find((item) => item.id === id);
+      product = data.find((item) => item.id === id);
 
       if (product) {
-        if(product.requireSize){
+        if (product.requireSize) {
           const tshirtSizeDiv = document.createElement('div');
           tshirtSizeDiv.className = 'tshirtSize';
           tshirtSizeDiv.innerHTML = `
@@ -39,26 +39,29 @@ document.addEventListener('DOMContentLoaded', () => {
               </select>
           `;
           const wrapper = document.querySelector('.wrapper-withoutLine');
-          const secondCartWrapper = wrapper.querySelectorAll('.cartAmountWrapper')[1];
+          const secondCartWrapper =
+            wrapper.querySelectorAll('.cartAmountWrapper')[1];
           wrapper.insertBefore(tshirtSizeDiv, secondCartWrapper);
         }
         document.querySelector('.name').textContent = product.productName;
         document.querySelector('.price').textContent = `฿${product.price}`;
         document.querySelector('.description').textContent =
           product.description;
-        document.querySelector('.image-1').src = product.imageTopLeftSrc;
-        document.querySelector('.image-2').src = product.imageTopRightSrc;
-        document.querySelector('.image-3').src = product.imageBottomRightSrc;
-        for (let i = 1; i <= 6; i++) {
-          const imageElement = document.getElementById(`slide${i}`);
-          const imageSrc = product.imageSlides[i - 1];
-          if (imageElement && imageSrc) {
-            imageElement.src = imageSrc;
-          }
-        }
-      } else {
-        console.error('Product not found with ID:', id);
+        document.getElementById('imageProduct').src = product.imageFinal;
+        // document.querySelector('.image-1').src = product.imageTopLeftSrc;
+        // document.querySelector('.image-2').src = product.imageTopRightSrc;
+        // document.querySelector('.image-3').src = product.imageBottomRightSrc;
+        // for (let i = 1; i <= 6; i++) {
+        //   const imageElement = document.getElementById(`slide${i}`);
+        //   const imageSrc = product.imageSlides[i - 1];
+        //   if (imageElement && imageSrc) {
+        //     imageElement.src = imageSrc;
+        //   }
+        // }
       }
+      // else {
+      //   console.error('Product not found with ID:', id);
+      // }
     })
     .catch((error) => {
       console.error('Error fetching product data:', error);
@@ -67,63 +70,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
 function goHome() {
   window.location.href = 'main.html';
 }
 
 //quantity Part
 
-  let defaultCart ={
-  umbrella : 0,
-  blanket : 0,
-  cardholder : 0,
-  keychains : 0,
-  bandanas : 0,
-  tshirt : {
+let defaultCart = {
+  umbrella: 0,
+  blanket: 0,
+  cardholder: 0,
+  keychains: 0,
+  bandanas: 0,
+  tshirt: {
     S: 0,
     M: 0,
     L: 0,
     XL: 0,
     XXL: 0,
-    XXXL : 0,
+    XXXL: 0,
   },
-}
+};
 
 let quantity = 1;
 let size = null;
-function getCart(){
+function getCart() {
   const cart = localStorage.getItem('cart');
   return cart ? JSON.parse(cart) : structuredClone(defaultCart);
 }
 
-function saveCart(cart){
-  localStorage.setItem('cart', JSON.stringify(cart))
+function saveCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function updateProductAmount(productId, size = null, newAmount){
+function updateProductAmount(productId, size = null, newAmount) {
   const cart = getCart();
-  if(size){ //tshirt
-    if(!cart[productId]) cart[productId] = {}; //productId = tshirt here
-    if(!cart[productId][size]) cart[productId][size] = 0; 
+  if (size) {
+    //tshirt
+    if (!cart[productId]) cart[productId] = {}; //productId = tshirt here
+    if (!cart[productId][size]) cart[productId][size] = 0;
     cart[productId][size] += newAmount;
-  }else{ //not tshirt
-    if(!cart[productId]) cart[productId] = 0;
+  } else {
+    //not tshirt
+    if (!cart[productId]) cart[productId] = 0;
     cart[productId] += newAmount;
   }
   saveCart(cart);
 }
 
-function resetCart(){
-  quantity = 1
+function resetCart() {
+  quantity = 1;
   // document.querySelector('.amount-afterclick').textContent = String(quantity).padStart(2,'0')
-  updateCart()
-  
+  updateCart();
 }
 
 function updateCart() {
-  document.querySelector('.amount-afterclick').textContent = String(quantity).padStart(2, '0');
+  document.querySelector('.amount-afterclick').textContent = String(
+    quantity
+  ).padStart(2, '0');
   // updateTotal();
 }
 
@@ -138,7 +142,6 @@ function decreaseQuantity() {
     quantity--;
     updateCart();
     disableButtonTemporarily(document.querySelector('.minus'));
-
   }
 }
 
@@ -149,32 +152,35 @@ function disableButtonTemporarily(button) {
   }, 200); // Disable the button for x second
 }
 
-document.querySelector('.plus').addEventListener('click', ()=>{
-  setTimeout(()=>{
-    increaseQuantity()
-  },300)})
+document.querySelector('.plus').addEventListener('click', () => {
+  setTimeout(() => {
+    increaseQuantity();
+  }, 300);
+});
 
-document.querySelector('.minus').addEventListener('click', ()=>{
-    setTimeout(()=>{
-      decreaseQuantity()
-    },300)})
-    
-document.getElementById('addToBasketButton').addEventListener('click', ()=>{
-  setTimeout(()=>{
+document.querySelector('.minus').addEventListener('click', () => {
+  setTimeout(() => {
+    decreaseQuantity();
+  }, 300);
+});
+
+document.getElementById('addToBasketButton').addEventListener('click', () => {
+  setTimeout(() => {
     const sizeSelect = document.getElementById('sizeSelection');
     const size = sizeSelect ? sizeSelect.value : null;
     updateProductAmount(product.id, size, quantity);
     resetCart();
-    goHome()
-  },300)})
+    goHome();
+  }, 300);
+});
 
-document.getElementById('resetButton').addEventListener('click', ()=>{
-      setTimeout(()=>{
-        resetCart()
-      },300)})
+document.getElementById('resetButton').addEventListener('click', () => {
+  setTimeout(() => {
+    resetCart();
+  }, 300);
+});
 //go back button
 document.querySelector('.btn-back').addEventListener('click', goHome);
-
 
 //export
 

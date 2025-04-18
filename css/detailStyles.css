@@ -75,9 +75,8 @@ header .cart {
 .product-details {
   position: relative;
   padding: 0;
-  
 }
-.marginTop{
+.marginTop {
   margin-top: 10px;
   /* aspect-ratio: 2/1; */
 }
@@ -95,14 +94,14 @@ header .cart {
 .order-btn-afterclick {
   font-size: 23px;
   width: 100%;
-  
+
   color: white;
   display: flex;
   background-color: #006745;
   z-index: 1;
 }
 
-.tshirtSize{
+.tshirtSize {
   border: 1px white solid;
   /* padding-left: 15px; */
   /* padding-right: 10px; */
@@ -111,7 +110,7 @@ header .cart {
   margin-right: 10px;
 }
 
-#sizeSelection{
+#sizeSelection {
   color: white;
   border-top: 1px white solid;
   height: 30px;
@@ -121,26 +120,34 @@ header .cart {
   text-align: center;
 }
 
-.size{
+.size {
   background-color: #006745;
 }
 
-.wrapper-withoutLine{
+.wrapper-withoutLine {
   aspect-ratio: 2/1;
   background-color: #006745;
 }
 
-.amount-afterclick{
+.amount-afterclick {
   margin-left: 5px;
 }
 
-.button-minus-plus{
+.button-minus-plus {
   margin-right: 15px;
   align-items: center;
   display: flex;
 }
 
-.upper{
+.product-image {
+  aspect-ratio: 4/5;
+  width: 100%;
+  display: flex;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.upper {
   margin-bottom: 0px;
 }
 .name {
@@ -291,8 +298,7 @@ header .cart {
   margin-top: 15px;
 }
 
-
-.plus{
+.plus {
   border-radius: 50%;
   height: 75px;
   aspect-ratio: 1/1;
@@ -301,10 +307,9 @@ header .cart {
   border: none;
   font-size: 45px;
   font-weight: 100;
-
 }
 
-.minus{
+.minus {
   border-radius: 50%;
   height: 75px;
   aspect-ratio: 1/1;
@@ -314,26 +319,26 @@ header .cart {
   font-size: 30px;
 }
 
-#resetButton{
+#resetButton {
   margin-left: 5px;
   background-color: black;
   color: white;
   border: none;
   font-family: 'Fachada';
   width: 50%;
-  height: 29px ;
+  height: 29px;
   margin-right: 3px;
   font-size: 10px;
 }
 
-#addToBasketButton{
+#addToBasketButton {
   margin-right: 5px;
   background-color: black;
   color: white;
   border: none;
   font-family: 'Fachada';
   width: 50%;
-  height: 29px ;
+  height: 29px;
   font-size: 10px;
 }
 
@@ -354,6 +359,7 @@ footer {
 }
 
 .contact-footer {
+  position: absolute;
   width: 100px; /* adjust size as needed */
   height: auto;
   object-fit: contain;
@@ -361,6 +367,8 @@ footer {
 }
 
 .logo-footer {
+  position: absolute;
+  right: 30px;
   width: 70px;
   height: 70px;
   margin-right: 5px;

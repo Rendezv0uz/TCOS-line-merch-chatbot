@@ -59,15 +59,58 @@ header .cart {
 }
 
 .parallyx {
-  display: flex;
-  z-index: 1;
-  width: 100%; /* Ensure it fits the phone's width */
+  position: relative;
+  padding: 0px 40px 20px;
+  height: 260px;
+  display: grid;
+  overflow: hidden;
 }
 
 .parallyx img {
   width: 100%; /* Make the image responsive */
   height: 100%; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the container */
+  object-fit: contain; /* Ensure the image covers the container */
+  z-index: 4;
+}
+.parallyx p {
+  margin: 0 20px;
+}
+
+.parallyx-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.parallyx-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.layer0 {
+  height: 50%;
+  opacity: 1;
+}
+
+.layer1 {
+  z-index: 1;
+  opacity: 1;
+}
+
+.layer2 {
+  z-index: 2;
+  opacity: 0.6;
+}
+
+.layer3 {
+  z-index: 3;
+  opacity: 0.3;
 }
 
 .grid {
@@ -106,6 +149,7 @@ header .cart {
   font-size: 16px;
   font-family: 'Fachada';
   overflow: visible;
+  z-index: 10;
 }
 
 #thaifont {
@@ -143,40 +187,42 @@ header .cart {
 }
 
 .bg-blanket {
-  background-image: url('../assets/images/furina.jpg');
+  background-image: url('../assets/images/pahomGrid.JPG');
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bg-umbrella {
-  background-image: url('../assets/images/model1.jpg');
+  background-image: url('../assets/images/umbrellaGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-bandanas {
-  background-image: url('../assets/images/model1.jpg');
+  background-image: url('../assets/images/toodGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-keychains {
-  background-image: url('../assets/images/model1.jpg');
+  background-image: url('../assets/images/keychainGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-cardholder {
-  background-image: url('../assets/images/model1.jpg');
+  background-image: url('../assets/images/cardGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-tshirt {
-  background-image: url('../assets/images/model1.jpg');
+  background-image: url('../assets/images/shirtGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -187,7 +233,7 @@ header .cart {
   /* width: 150px; */
   width: 100vw;
   max-width: 100vw;
-  aspect-ratio: 1.5/1;
+  aspect-ratio: 5/4;
   display: flex;
   transition: opacity 1s ease-in-out;
   overflow: hidden;
