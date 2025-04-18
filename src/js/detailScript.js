@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const id = urlParams.get('id');
 
   // Fetch the product data
-  fetch('/data.json')
+  fetch('../data/data.json')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
