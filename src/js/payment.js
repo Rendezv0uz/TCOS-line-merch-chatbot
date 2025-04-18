@@ -1,11 +1,10 @@
-
 function goHome() {
   window.location.href = 'cart.html';
 }
 
 // const form = document.querySelector('.formlol');
 // form.addEventListener("submit", function(e){
-  
+
 //   const formData ={
 //     name : form.name.value,
 //     tel : form.tel.value,
@@ -22,12 +21,12 @@ function goHome() {
 //     province: form.province.value,
 //     zipcode: form.zipcode.value,
 //   }
-  
+
 //   fetch("https://script.google.com/macros/s/AKfycbyE51R1PoBqTgiqRo-myc-ONPhCwcGsXBm4M5lsDZ7CmL0TwDGWBm10hdJeLfL0q72Q/exec" , {
 //     method : "POST",
 //     body : JSON.stringify(formData),
 //     headers: {
-//       "Content-Type": "application/json", // important!
+//       "Content-Type": "application./json", // important!
 //     },
 //   })
 //   .then(res => res.text())
@@ -40,27 +39,30 @@ function goHome() {
 
 const form = document.forms['sheet'];
 
-form.addEventListener("submit", e=> {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   // const formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbwsUdGEKfRPbq0UmokBfZkLb-R84kWrUSFVMmzxDuXct_VqJadl6TjxwTLxeAM_24IS/exec", {
-    method: "POST",
-    body: new FormData(form)
-  })
-  .then(data => {
-    alert("ส่งข้อมูลเรียบร้อยแล้ว!");
-    localStorage.clear();
-    form.reset();
-  })
-  .catch(err => {
-    console.error("Error:", err);
-    alert("ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่");
-  });
+  fetch(
+    'https://script.google.com/macros/s/AKfycbwsUdGEKfRPbq0UmokBfZkLb-R84kWrUSFVMmzxDuXct_VqJadl6TjxwTLxeAM_24IS/exec',
+    {
+      method: 'POST',
+      body: new FormData(form),
+    }
+  )
+    .then((data) => {
+      alert('ส่งข้อมูลเรียบร้อยแล้ว!');
+      localStorage.clear();
+      form.reset();
+    })
+    .catch((err) => {
+      console.error('Error:', err);
+      alert('ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่');
+    });
 });
 
-document.querySelector('.btn-back').addEventListener('click', goHome)
+document.querySelector('.btn-back').addEventListener('click', goHome);
 
 // const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
 

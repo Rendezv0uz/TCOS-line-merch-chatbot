@@ -74,7 +74,7 @@ header .cart-icon {
 main {
   position: relative;
   padding: 20px 30px;
-  background-image: url(../assets/addAndreset/QR_Background.svg);
+  background-image: url("/assets/addAndreset/QR_Background.svg");
 }
 
 .btn-back {
@@ -167,8 +167,8 @@ input {
   padding: 10px 30px;
 }
 
-#submitting{
-  background-image: url(../assets/addAndreset/confirm_button.svg);
+#submitting {
+  background-image: url("/assets/addAndreset/confirm_button.svg");
   font-family: 'TorslipNantarat';
   width: 100%;
   background-position: center;
@@ -240,7 +240,6 @@ input {
   font-family: 'TorslipNantarat';
 }
 
-
 .shipping-option input[type='email'] {
   width: 100%; /* Full width inside the .shipping-option */
   height: 40px;
@@ -268,16 +267,16 @@ input {
   font-family: 'TorslipNantarat';
 }
 
-input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-  /* Remove arrows in Firefox */
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
+/* Remove arrows in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
 
 .total-section {
   position: relative;

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "start public/main.html",
+    "start": "http-server src/ -c-1",
     "dev": "nodemon server.js"
   },
   "author": "",
@@ -15,7 +15,8 @@
   "dependencies": {
     "@line/bot-sdk": "^9.8.0",
     "dotenv": "^16.4.7",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "http-server": "^14.1.1"
   },
   "type": "module"
 }

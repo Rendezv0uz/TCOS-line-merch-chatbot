@@ -187,42 +187,42 @@ header .cart {
 }
 
 .bg-blanket {
-  background-image: url('../assets/images/pahomGrid.JPG');
+  background-image: url('/assets/images/pahomGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-umbrella {
-  background-image: url('../assets/images/umbrellaGrid.JPG');
+  background-image: url('/assets/images/umbrellaGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-bandanas {
-  background-image: url('../assets/images/toodGrid.JPG');
+  background-image: url('/assets/images/toodGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-keychains {
-  background-image: url('../assets/images/keychainGrid.JPG');
+  background-image: url('/assets/images/keychainGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-cardholder {
-  background-image: url('../assets/images/cardGrid.JPG');
+  background-image: url('/assets/images/cardGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-tshirt {
-  background-image: url('../assets/images/shirtGrid.JPG');
+  background-image: url('/assets/images/shirtGrid.JPG');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

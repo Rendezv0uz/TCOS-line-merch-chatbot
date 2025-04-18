@@ -1,20 +1,20 @@
 let total = 0;
 // let quantity = 1;
-const defaultCart ={
-  umbrella : 0,
-  blanket : 0,
-  cardholder : 0,
-  keychains : 0,
-  bandanas : 0,
-  tshirt : {
+const defaultCart = {
+  umbrella: 0,
+  blanket: 0,
+  cardholder: 0,
+  keychains: 0,
+  bandanas: 0,
+  tshirt: {
     S: 0,
     M: 0,
     L: 0,
     XL: 0,
     XXL: 0,
-    XXXL : 0,
+    XXXL: 0,
   },
-}
+};
 let cart;
 let priceDetail;
 let price = 0;
@@ -23,63 +23,73 @@ const emsBtn = document.querySelector('.viaEms');
 const staffBtn = document.querySelector('.viaStaff');
 const totalPrice = document.getElementById('total');
 
-
-document.addEventListener('DOMContentLoaded', async()=>{
+document.addEventListener('DOMContentLoaded', async () => {
   const storedCart = localStorage.getItem('cart');
   cart = storedCart ? JSON.parse(storedCart) : null;
   // console.log(cart);
-  const priceFetch = await fetch("../data/data.json")
+  const priceFetch = await fetch('/data/data.json');
   const priceArray = await priceFetch.json();
-  priceDetail = Object.fromEntries(priceArray.map(p=> [p.id, p]))
+  priceDetail = Object.fromEntries(priceArray.map((p) => [p.id, p]));
   // console.log(priceDetail)
-  Object.entries(cart).forEach(([productId, quantityOrSize])=>{
-        switch (productId) {
-          case "cardholder":
-          case "candanas":
-          case "keychains":
-          case "blanket":
-          case "umbrella":
-            if(quantityOrSize > 0){
-        document.querySelector('.cart').insertAdjacentHTML('afterbegin',`<img src="${priceDetail[productId].cartImageSrc}" id="supportMoney">
+  Object.entries(cart).forEach(([productId, quantityOrSize]) => {
+    switch (productId) {
+      case 'cardholder':
+      case 'candanas':
+      case 'keychains':
+      case 'blanket':
+      case 'umbrella':
+        if (quantityOrSize > 0) {
+          document.querySelector('.cart').insertAdjacentHTML(
+            'afterbegin',
+            `<img src="${
+              priceDetail[productId].cartImageSrc
+            }" id="supportMoney">
           <div class="blankPrice blankPriceMerch-${productId}">
           <div class="amount amountMerch-${productId}">X${cart[productId]}</div>
-          <div class="priceOne priceMerch-${productId}">฿${priceDetail[productId].price * cart[productId]}</div>
+          <div class="priceOne priceMerch-${productId}">฿${
+              priceDetail[productId].price * cart[productId]
+            }</div>
           <div>
             <button class="increase-btn-template">+</button>
           <button class="decrease-btn-template">-</button>
           </div>
           <div class="line"></div>
-        </div>`)
-            }
-            break;
-          case "tshirt" :
-          Object.entries(quantityOrSize).forEach(([size, quantityTshirt])=>{
-              if(quantityTshirt > 0){
-                
-                  document.querySelector('.cart').insertAdjacentHTML('afterbegin',`<div><img src="${priceDetail[productId].cartImageSrc}" alt="tshirt${size}" id="supportMoney">
+        </div>`
+          );
+        }
+        break;
+      case 'tshirt':
+        Object.entries(quantityOrSize).forEach(([size, quantityTshirt]) => {
+          if (quantityTshirt > 0) {
+            document.querySelector('.cart').insertAdjacentHTML(
+              'afterbegin',
+              `<div><img src="${
+                priceDetail[productId].cartImageSrc
+              }" alt="tshirt${size}" id="supportMoney">
                     <div class="blankPrice blankPriceMerch-tshirt">
                     <div class="amount amountMerch-${size}">X${quantityTshirt} <span id="shirtsize">(${size})</span></div>
                     
-                    <div class="priceOne priceMerch-${size}">฿${priceDetail[productId].price * quantityTshirt}</div>
+                    <div class="priceOne priceMerch-${size}">฿${
+                priceDetail[productId].price * quantityTshirt
+              }</div>
                     <div>
                       <button class="increase-btn-template">+</button>
                     <button class="decrease-btn-template">-</button>
                     </div>
                     
                     <div class="line"></div>
-                  </div>`)
-              }
-          })
-          break;
+                  </div>`
+            );
+          }
+        });
+        break;
 
-          default :
-            console.warn(`Unknown product : ${productId}`)
-
+      default:
+        console.warn(`Unknown product : ${productId}`);
     }
     //total
-  })
-})
-
+  });
+});
 
 function increaseQuantity() {
   quantity++;
@@ -95,42 +105,44 @@ function decreaseQuantity() {
 
 function updateTotal() {
   let price = 0;
-  let shippingCost = emsBtn.classList.contains("beingClicked") ? 30 : 0;
-  Object.entries(cart).forEach(([productName, priceOrSize])=>{
-    if(productName === "tshirt"){
-      Object.entries(priceOrSize).forEach(([size, amount])=>{
-        if(amount > 0){
+  let shippingCost = emsBtn.classList.contains('beingClicked') ? 30 : 0;
+  Object.entries(cart).forEach(([productName, priceOrSize]) => {
+    if (productName === 'tshirt') {
+      Object.entries(priceOrSize).forEach(([size, amount]) => {
+        if (amount > 0) {
           price += amount * priceDetail[productName].price;
         }
-      })
-    }else{
-      if(priceOrSize > 0)
-      price += priceOrSize * priceDetail[productName].price;
+      });
+    } else {
+      if (priceOrSize > 0)
+        price += priceOrSize * priceDetail[productName].price;
     }
-  })
+  });
   total = supportAmount + shippingCost + price;
   document.getElementById('total').textContent = `${total}฿`;
 }
 
 function goHome() {
-  window.location.href = 'main.html';
+  window.location.href = '/';
 }
 
 function continueShopping() {
-  window.location.href = 'main.html'; // Change to your home page
+  window.location.href = '/'; // Change to your home page
 }
 
 const StringDefaultCart = JSON.stringify(defaultCart);
 function confirmOrder() {
-  if(!cart) return;
-  if(JSON.stringify(cart) === StringDefaultCart) return;
-  if(staffBtn.classList.contains('beingClicked') || emsBtn.classList.contains('beingClicked')){
+  if (!cart) return;
+  if (JSON.stringify(cart) === StringDefaultCart) return;
+  if (
+    staffBtn.classList.contains('beingClicked') ||
+    emsBtn.classList.contains('beingClicked')
+  ) {
     window.location.href = 'payment.html';
-  }else{
+  } else {
     return;
   }
 }
-
 
 /*
 document.querySelector('.decrease-btn-template').addEventListener('click',()=>{
@@ -143,27 +155,36 @@ document.querySelector('.increase-btn-template').addEventListener('click',()=>{
 */
 
 //support
-function updateSupportDisplay(){
-  document.querySelector('.supportme').nextElementSibling.querySelector('.priceOne').textContent = `฿${supportAmount}`
+function updateSupportDisplay() {
+  document
+    .querySelector('.supportme')
+    .nextElementSibling.querySelector(
+      '.priceOne'
+    ).textContent = `฿${supportAmount}`;
 }
-document.addEventListener('DOMContentLoaded', ()=>{
-  
-  document.getElementById('supportMoney').nextElementSibling.querySelector('.increase-btn-template').addEventListener('click', ()=>{
-    supportAmount++
-    updateSupportDisplay();
-    updateTotal();
-  })
-  document.getElementById('supportMoney').nextElementSibling.querySelector('.decrease-btn-template').addEventListener('click', ()=>{
-    if(supportAmount > 0){
-      supportAmount--;
-    }
-    updateSupportDisplay();
-    updateTotal()
-  })
-})
+document.addEventListener('DOMContentLoaded', () => {
+  document
+    .getElementById('supportMoney')
+    .nextElementSibling.querySelector('.increase-btn-template')
+    .addEventListener('click', () => {
+      supportAmount++;
+      updateSupportDisplay();
+      updateTotal();
+    });
+  document
+    .getElementById('supportMoney')
+    .nextElementSibling.querySelector('.decrease-btn-template')
+    .addEventListener('click', () => {
+      if (supportAmount > 0) {
+        supportAmount--;
+      }
+      updateSupportDisplay();
+      updateTotal();
+    });
+});
 
 //4 big circle buttons
-document.querySelector('.confirming').addEventListener('click', confirmOrder)
+document.querySelector('.confirming').addEventListener('click', confirmOrder);
 
 function handleClick(clickedBtn, otherBtn) {
   clickedBtn.classList.add('beingClicked');
@@ -172,7 +193,7 @@ function handleClick(clickedBtn, otherBtn) {
 
 emsBtn.addEventListener('click', () => {
   handleClick(emsBtn, staffBtn);
-  updateTotal()
+  updateTotal();
 });
 
 staffBtn.addEventListener('click', () => {
@@ -180,8 +201,8 @@ staffBtn.addEventListener('click', () => {
   updateTotal();
 });
 
-document.querySelector('.continueShop').addEventListener('click', goHome)
-document.querySelector('.btn-back').addEventListener('click', goHome)
+document.querySelector('.continueShop').addEventListener('click', goHome);
+document.querySelector('.btn-back').addEventListener('click', goHome);
 
 // const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
 

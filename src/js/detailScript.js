@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const id = urlParams.get('id');
 
   // Fetch the product data
-  fetch('../data/data.json')
+  fetch('/data/data.json')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const tshirtSizeDiv = document.createElement('div');
           tshirtSizeDiv.className = 'tshirtSize';
           tshirtSizeDiv.innerHTML = `
-            <img src="../assets/realproduct/tshirt/shirtsize.svg">
+            <img src="/assets/realproduct/tshirt/shirtsize.svg">
               <select id="sizeSelection" name="size-select">
                 <option class="size" value="S">S</option>
                 <option class="size" value="M">M</option>
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function goHome() {
-  window.location.href = 'main.html';
+  window.location.href = '/';
 }
 
 //quantity Part
