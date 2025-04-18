@@ -1,19 +1,22 @@
 {
   "name": "tcos-mechandise-main",
   "version": "1.0.0",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "test": "start public/main.html",
+    "start": "parcel",
+    "build": "parcel build",
     "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "parcel": "^2.14.4"
   },
   "dependencies": {
     "@line/bot-sdk": "^9.8.0",
+    "@line/liff": "^2.25.1",
     "dotenv": "^16.4.7",
     "express": "^5.1.0"
   },
