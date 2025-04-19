@@ -73,7 +73,7 @@ function getPurchasedMerchText() {
 
   return lines.length > 0 ? lines.join('\n') : 'ไม่มีรายการสินค้า';
 }
-
+const profile = await liff.getProfile();
 const LIFF_ID = process.env.LIFF_ID;
 const form = document.forms['sheet'];
 window.onload = async () => {
@@ -97,16 +97,16 @@ window.onload = async () => {
             {
               type: 'text',
               text: `สรุปรายการสั่งซื้อ Pre-Order Merchandise ของ ${
-                liff.getProfile().displayName
+                profile.displayName
               } 
                       :\n${autoText}
                       📝 ชื่อ-นามสกุล: ${form.name.value}
                       📞 เบอร์โทรศัพท์: ${form.tel.value}
                       🗓 วันที่: ${form.date.value}
-                        จำนวนเงิน ${form.pricePay.value} บาท
-                      🚚 รูปเเบบการจัดส่ง: ${(form.shippingMethod.value = 1
-                        ? EMS
-                        : พนักงาน)}
+                      💰 จำนวนเงิน ${form.pricePay.value} บาท
+                      🚚 รูปเเบบการจัดส่ง: ${
+                        form.shippingMethod.value === '1' ? EMS : พนักงาน
+                      }
                       ข้อความนี้เป็นข้อความอัตโนมัติ
                       โปรดรอการตอบกลับจากทีมงานเพื่อยืนยันรายการสั่งซื้อเเละดำเนินการชำระเงินต่อไป`,
             },
@@ -117,7 +117,7 @@ window.onload = async () => {
         form.reset();
         liff.closeWindow();
       } catch (err) {
-        liff.closeWindow;
+        liff.closeWindow();
       }
     });
   } catch (err) {
