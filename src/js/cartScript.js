@@ -106,18 +106,80 @@ function decreaseQuantity() {
 function updateTotal() {
   let price = 0;
   let shippingCost = emsBtn.classList.contains('beingClicked') ? 60 : 0;
+
+  // Count amounts of each product
+  const productAmounts = {
+    umbrella: 0,
+    bandanas: 0,
+    keychains: 0,
+    cardholder: 0,
+    blanket: 0,
+    tshirt: 0,
+  };
+
+  // Calculate base price and count amounts
   Object.entries(cart).forEach(([productName, priceOrSize]) => {
     if (productName === 'tshirt') {
       Object.entries(priceOrSize).forEach(([size, amount]) => {
         if (amount > 0) {
           price += amount * priceDetail[productName].price;
+          productAmounts.tshirt += amount;
         }
       });
     } else {
-      if (priceOrSize > 0)
+      if (priceOrSize > 0) {
         price += priceOrSize * priceDetail[productName].price;
+        productAmounts[productName] = priceOrSize;
+      }
     }
   });
+
+  // Apply discounts in order of priority
+
+  // 1. Full Set Discount (all 6 items)
+  let fullSetCount = Math.min(
+    productAmounts.umbrella,
+    productAmounts.bandanas,
+    productAmounts.keychains,
+    productAmounts.cardholder,
+    productAmounts.blanket,
+    productAmounts.tshirt
+  );
+  if (fullSetCount > 0) {
+    price -= fullSetCount * 75;
+    // Subtract used items
+    productAmounts.umbrella -= fullSetCount;
+    productAmounts.bandanas -= fullSetCount;
+    productAmounts.keychains -= fullSetCount;
+    productAmounts.cardholder -= fullSetCount;
+    productAmounts.blanket -= fullSetCount;
+    productAmounts.tshirt -= fullSetCount;
+  }
+
+  // 2. Shirt + Umbrella Discount (฿9)
+  let shirtUmbrellaCount = Math.min(
+    productAmounts.tshirt,
+    productAmounts.umbrella
+  );
+  if (shirtUmbrellaCount > 0) {
+    price -= shirtUmbrellaCount * 9;
+    productAmounts.tshirt -= shirtUmbrellaCount;
+    productAmounts.umbrella -= shirtUmbrellaCount;
+  }
+
+  // 3. Cardholder + Keychains + Bandana Discount (฿18)
+  let smallBundleCount = Math.min(
+    productAmounts.cardholder,
+    productAmounts.keychains,
+    productAmounts.bandanas
+  );
+  if (smallBundleCount > 0) {
+    price -= smallBundleCount * 18;
+    productAmounts.cardholder -= smallBundleCount;
+    productAmounts.keychains -= smallBundleCount;
+    productAmounts.bandanas -= smallBundleCount;
+  }
+
   total = supportAmount + shippingCost + price;
   document.getElementById('total').textContent = `${total}฿`;
 }
