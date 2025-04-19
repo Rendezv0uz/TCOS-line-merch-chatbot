@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 function goHome() {
   window.location.href = 'cart.html';
 }
