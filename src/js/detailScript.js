@@ -49,16 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.description').textContent =
           product.description;
         document.getElementById('imageProduct').src = product.imageFinal;
-        // document.querySelector('.image-1').src = product.imageTopLeftSrc;
-        // document.querySelector('.image-2').src = product.imageTopRightSrc;
-        // document.querySelector('.image-3').src = product.imageBottomRightSrc;
-        // for (let i = 1; i <= 6; i++) {
-        //   const imageElement = document.getElementById(`slide${i}`);
-        //   const imageSrc = product.imageSlides[i - 1];
-        //   if (imageElement && imageSrc) {
-        //     imageElement.src = imageSrc;
-        //   }
-        // }
       }
       // else {
       //   console.error('Product not found with ID:', id);

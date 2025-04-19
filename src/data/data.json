@@ -2,17 +2,6 @@
   {
     "id": "umbrella",
     "productName": "UMBRELLA",
-    "imageTopLeftSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageTopRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageBottomRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageSlides": [
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg"
-    ],
     "imageFinal": "/assets/realproduct/umbrella/UMBRELLA.JPG",
     "description": "ร่มกันยูวีลวดลายเครื่องดนตรีที่สะท้อนบรรยากาศสนุกสนานของแสง สี เสียง และจังหวะดนตรีใน The Hidden Saloon พร้อมปกป้องคุณจากฝนและรังสี UV ได้อย่างมีประสิทธิภาพในทุกวัน",
     "price": 299,
@@ -22,17 +11,6 @@
   {
     "id": "blanket",
     "productName": "BLANKET",
-    "imageTopLeftSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageTopRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageBottomRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageSlides": [
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg"
-    ],
     "imageFinal": "/assets/realproduct/blanket/BLANKET.JPG",
     "description": "ผ้าห่มเนื้อนุ่มที่ออกแบบเป็นพิเศษด้วยลวดลายแผนที่จากละครเวที The Hidden Saloon เพื่อให้ผู้ชมได้สัมผัสทั้งความอบอุ่นทางกาย และความใกล้ชิดกับเนื้อเรื่องมากยิ่งขึ้น",
     "price": 499,
@@ -42,17 +20,6 @@
   {
     "id": "cardholder",
     "productName": "CARDHOLDER",
-    "imageTopLeftSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageTopRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageBottomRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageSlides": [
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg"
-    ],
     "imageFinal": "/assets/realproduct/cardholder/CARDHOLDER.JPG",
     "description": "ที่ใส่บัตรดีไซน์สนุก มาพร้อมสายคล้อง สะท้อนจังหวะของเสียงเพลงผ่านลวดลายที่ไม่เหมือนใคร ผสมผสานความสวยงามและความบันเทิงของดนตรีไว้ในชิ้นเดียว",
     "price": 179,
@@ -62,17 +29,6 @@
   {
     "id": "keychains",
     "productName": "KEYCHAINS",
-    "imageTopLeftSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageTopRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageBottomRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageSlides": [
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg"
-    ],
     "imageFinal": "/assets/realproduct/keychains/KEYCHAINS.JPG",
     "description": "คอลเลกชันถุงสุ่มพวงกุญแจจาก The Hidden Saloon ที่รวบรวมตัวละครน่ารักไว้ถึง 5 แบบ พร้อมเทปอัดเสียงจิ๋วในทุกเซต สำหรับบันทึกข้อความส่งต่อให้คนที่คุณรัก",
     "price": 109,
@@ -82,17 +38,6 @@
   {
     "id": "bandanas",
     "productName": "BANDANAS",
-    "imageTopLeftSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageTopRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageBottomRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageSlides": [
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg"
-    ],
     "imageFinal": "/assets/realproduct/bandanas/BANDANAS.JPG",
     "description": "สะท้อนกลิ่นอายแฟชั่นยุค 60 ผ่านผ้าอเนกประสงค์สองลวดลาย ที่สามารถโพกหัว ผูกกระเป๋า หรือใช้เป็นเครื่องประดับลุค เพื่อเพิ่มเอกลักษณ์ให้กับการแต่งกายของคุณอย่างมีสไตล์",
     "price": 189,
@@ -102,17 +47,6 @@
   {
     "id": "tshirt",
     "productName": "TSHIRT",
-    "imageTopLeftSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageTopRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageBottomRightSrc": "/assets/realproduct/blanket/blanketTopLeft.jpg",
-    "imageSlides": [
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg",
-      "/assets/realproduct/blanket/blanketTopLeft.jpg"
-    ],
     "imageFinal": "/assets/realproduct/tshirt/SHIRT.JPG",
     "description": "เสื้อยืดเนื้อผ้านุ่ม ใส่สบาย มาพร้อมลวดลายนักดนตรีสุดน่ารักที่บรรเลงเพลงอย่างสนุกสนานในบาร์ The Hidden Saloon ใส่ได้ทุกวัน เพิ่มสีสันให้กับสไตล์ของคุณ",
     "price": 259,
