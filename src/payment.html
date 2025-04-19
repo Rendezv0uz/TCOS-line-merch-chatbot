@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="/css/payment.css" />
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script defer src="./js/payment.js"></script>
-  </head>
-  <body>
-    <div class="content-wrapper">
-      <header>
-        <img class="logo" src="/assets/icons/logo.png" />
-        <a
-          href="https://linktr.ee/thecomingofstages_documentary?utm_source=linktree_admin_share&fbclid=PAZXh0bgNhZW0CMTEAAaaC45ozK93iGOUj_dmeCmfEM0Pzr2dT35lfQrKNvsz30gajmBKRXl3NUUM_aem_a-7gkXZCgy6Jn-6INV9ANg"
-          >LinkTree</a
-        >
-        <a href="https://thecomingofstages.com/donate">Support Us</a>
-        <a href="cart.html" style="margin: 0">
-          <img class="cart-icon" src="/assets/icons/basketforweb.svg" alt="Cart" />
-        </a>
-      </header>
-    
-      <main>
-        <button  class="btn-back">< </button>
 
-        <section class="cart">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="/css/globals.css" />
+  <link rel="stylesheet" href="/css/payment.css" />
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script defer src="./js/payment.js"></script>
+</head>
 
-          <img src="/assets/images/QRreal.jpg" class="qr-code" alt="QR Code" />
-         
-          </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+<body>
+  <div class="content-wrapper">
+    <header>
+      <img class="logo" src="/assets/icons/TCOS_Logo.png" />
+      <a
+        href="https://linktr.ee/thecomingofstages_documentary?utm_source=linktree_admin_share&fbclid=PAZXh0bgNhZW0CMTEAAaaC45ozK93iGOUj_dmeCmfEM0Pzr2dT35lfQrKNvsz30gajmBKRXl3NUUM_aem_a-7gkXZCgy6Jn-6INV9ANg">LinkTree</a>
+      <a href="https://thecomingofstages.com/donate">Support Us</a>
+      <a href="cart.html" style="margin: 0">
+        <img class="cart-icon" src="/assets/icons/basketforweb.svg" alt="Cart" />
+      </a>
+    </header>
 
-    <div class="shipping-section">
-      <!-- <h4>การจัดส่ง</h4> -->
+    <main>
+      <button class="btn-back">
+        < </button>
+
+          <section class="cart">
+
+            <img src="/assets/images/QRreal.jpg" class="qr-code" alt="QR Code" />
+
+  </div>
+  </div>
+  </div>
+  </section>
+  </main>
+  </div>
+
+  <div class="shipping-section">
+    <!-- <h4>การจัดส่ง</h4> -->
 
     <form action="#" method="post" class="formlol" name="sheet">
       <label class="shipping-option">
         ชื่อ-นามสกุล
         <input type="text" name="name" placeholder="เช่น นายการมา ของเวที" required />
       </label>
-      
+
       <label class="shipping-option">
         เบอร์โทรศัพท์
         <input type="text" name="tel" placeholder="เช่น 099-1234567" required />
@@ -69,7 +71,7 @@
         บ้านเลขที่
         <input type="text" name="home" placeholder="" required />
       </label>
-  
+
       <label class="shipping-option">
         หมู่
         <input type="text" name="mooh" pattern="\d+|-" placeholder="ถ้าไม่มีให้ใส่ -" required />
@@ -101,36 +103,37 @@
       </label>
 
       <label class="shipping-option">
-       ชื่อผู้ใช้งานไลน์
-        <input type="text" name="line"  required />
+        ชื่อผู้ใช้งานไลน์
+        <input type="text" name="line" required />
       </label>
 
       <label class="shipping-option">
         กรุณาส่งหลักฐานการโอนเงินที่ line ด้วยนะครับ/ค่ะ
-         <input type="text" name="line"  placeholder="กรุณาพิมพ์ว่า 'รับทราบ' เมื่ออ่านข้อความนี้ " required />
-       </label>
+        <input type="text" name="line" placeholder="กรุณาพิมพ์ว่า 'รับทราบ' เมื่ออ่านข้อความนี้ " required />
+      </label>
 
-      <input type="submit" value="ยืนยันการชำระเงิน" id ="submitting">
+      <input type="submit" value="ยืนยันการชำระเงิน" id="submitting">
 
     </form>
 
 
-      <!-- <div class="cart-actions">
+    <!-- <div class="cart-actions">
         <button onclick="continueShopping()">เลือกสินค้าต่อ</button>
         <button onclick="confirmOrder()">ยืนยันคำสั่งซื้อ</button>
       </div> -->
+  </div>
+  <footer>
+    <div class="footer-left">
+      <img class="contact-footer" src="/assets/icons/contactforweb.svg">
     </div>
-    <footer>
-        <div class="footer-left">
-          <img class="contact-footer" src="/assets/icons/contactforweb.svg">
-        </div>
-    
-          <div class="footer-right">
-              <img class="logo-footer" src="/assets/icons/TCOS_Logo.png" />
-         </div>
-          <!-- <div class="footer-bottom">
+
+    <div class="footer-right">
+      <img class="logo-footer" src="/assets/icons/TCOS_Logo.png" />
+    </div>
+    <!-- <div class="footer-bottom">
           <span>&copy; 2025 The Coming of Stages. All rights reserved.</span>
         </div> -->
-      </footer>
-  </body>
+  </footer>
+</body>
+
 </html>

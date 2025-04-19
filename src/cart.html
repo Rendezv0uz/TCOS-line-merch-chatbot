@@ -1,92 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="/css/cartStyles.css" />
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script defer src="./js/cartScript.js" type="module"></script>
-  </head>
-  <body>
-    <header>
-      <img class="logo" src="/assets/icons/logo.png" />
-      <a
-      href="https://linktr.ee/thecomingofstages_documentary?utm_source=linktree_admin_share&fbclid=PAZXh0bgNhZW0CMTEAAaaC45ozK93iGOUj_dmeCmfEM0Pzr2dT35lfQrKNvsz30gajmBKRXl3NUUM_aem_a-7gkXZCgy6Jn-6INV9ANg"
-      >LinkTree</a
-      >
-      <a href="https://thecomingofstages.com/donate">Support Us</a>
-      <a href="cart.html" style="margin: 0">
-        <img class="cart-icon" src="/assets/icons/basketforweb.svg" alt="Cart" />
-      </a>
-    </header>
-    
-    <main>
-      <div class="content-wrapper">
-       
-        
-        <section class="cart">
-          
-          <img src="/assets/cartAssets/Bottom-Support.png" id="supportMoney" class="supportme">
-          <div class="blankPrice">
-            <div class="amount">X1</div>
-            <div class="priceOne">฿0</div>
-            <div class="btn-group">
-              <button class="increase-btn-template">+</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="/css/globals.css" />
+  <link rel="stylesheet" href="/css/cartStyles.css" />
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script defer src="./js/cartScript.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="/assets/icons/TCOS_Logo.png" />
+    <a
+      href="https://linktr.ee/thecomingofstages_documentary?utm_source=linktree_admin_share&fbclid=PAZXh0bgNhZW0CMTEAAaaC45ozK93iGOUj_dmeCmfEM0Pzr2dT35lfQrKNvsz30gajmBKRXl3NUUM_aem_a-7gkXZCgy6Jn-6INV9ANg">LinkTree</a>
+    <a href="https://thecomingofstages.com/donate">Support Us</a>
+    <a href="cart.html" style="margin: 0">
+      <img class="cart-icon" src="/assets/icons/basketforweb.svg" alt="Cart" />
+    </a>
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+
+
+      <section class="cart">
+
+        <img src="/assets/cartAssets/Bottom-Support.png" id="supportMoney" class="supportme">
+        <div class="blankPrice">
+          <div class="amount">X1</div>
+          <div class="priceOne">฿0</div>
+          <div class="btn-group">
+            <button class="increase-btn-template">+</button>
             <button class="decrease-btn-template">-</button>
-            </div>
-            <div class="line"></div>
           </div>
-          
-        </section>
-      </main>
+          <div class="line"></div>
+        </div>
+
+      </section>
+  </main>
+  </div>
+
+
+
+  <div class="total-section">
+    <h4>รวมทั้งหมด</h4>
+    <span id="total">0฿</span>
+  </div>
+
+
+  <div class="shipping-section">
+    <h4>โปรดเลือกวิธีการรับสินค้า และยืนยันการสั่งซื้อ</h4>
+  </div>
+
+  <div class="gridshipping">
+    <div class="shipping-option-top viaEms">
+      <p id="shipping-cost">VIA EMS XX฿</p>
     </div>
 
 
-    
-    <div class="total-section">
-      <h4>รวมทั้งหมด</h4>
-      <span id="total">0฿</span>
+    <div class="shipping-option-top viaStaff">
+      <p id="shipping-cost">VIA STAFF 0฿</p>
     </div>
 
-    
-<div class="shipping-section">
-      <h4>โปรดเลือกวิธีการรับสินค้า และยืนยันการสั่งซื้อ</h4>
+    <div class="shipping-cell-white">
+      <button class="shipping-option-bottom continueShop">เลือกสินค้าต่อ</button>
     </div>
-    
-    <div class="gridshipping">
-      <div class="shipping-option-top viaEms">
-        <p id="shipping-cost">VIA EMS XX฿</p>
-      </div>
 
-    
-      <div class="shipping-option-top viaStaff">
-        <p id="shipping-cost">VIA STAFF 0฿</p>
-      </div>
-      
-      <div class="shipping-cell-white">
-        <button class="shipping-option-bottom continueShop">เลือกสินค้าต่อ</button>
-      </div>
-
-      <div class="shipping-cell-white">
-        <button class="shipping-option-bottom confirming">ยืนยันการสั่งซื้อ</button>
-      </div>
-       
-       
+    <div class="shipping-cell-white">
+      <button class="shipping-option-bottom confirming">ยืนยันการสั่งซื้อ</button>
     </div>
-      
+
+
+  </div>
+
   </div>
   <footer>
     <div class="footer-left">
       <img class="contact-footer" src="/assets/icons/contactforweb.svg">
     </div>
 
-      <div class="footer-right">
-          <img class="logo-footer" src="/assets/icons/TCOS_Logo.png" />
-     </div>
-      <!-- <div class="footer-bottom">
+    <div class="footer-right">
+      <img class="logo-footer" src="/assets/icons/TCOS_Logo.png" />
+    </div>
+    <!-- <div class="footer-bottom">
       <span>&copy; 2025 The Coming of Stages. All rights reserved.</span>
     </div> -->
   </footer>
-  </body>
+</body>
+
 </html>
