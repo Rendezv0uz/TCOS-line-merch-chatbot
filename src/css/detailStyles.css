@@ -143,6 +143,7 @@ header .cart {
   aspect-ratio: 4/5;
   width: 100%;
   display: flex;
+  position: relative;
   object-fit: cover;
   z-index: 1;
 }
@@ -176,18 +177,28 @@ header .cart {
 
 .btn-back {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 24px;
+  top: 75px;
+  left: 20px;
+  z-index: 20;
+
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.7); /* darker background for visibility */
+  color: white;
+  border: 0px solid white;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* optional shadow for visibility */
+  transition: background-color 0.3s ease;
 }
 
 .four-images-group-dev {

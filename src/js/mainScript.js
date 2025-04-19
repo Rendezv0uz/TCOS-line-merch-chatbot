@@ -2,7 +2,7 @@ let currentIndex = 0;
 
 const carouselElem = document.querySelector('.carousel-container');
 const imageElems = document.querySelectorAll('.carousel-image');
-const previousBtnElem = document.querySelector('.btn-prev');
+// const previousBtnElem = document.querySelector('.btn-prev');
 const nextBtnElem = document.querySelector('.btn-next');
 const indicatorsContainer = document.getElementById('carousel-indicators');
 const imageBox2 = document.querySelector('.box2');
@@ -79,13 +79,13 @@ function displayImage(imageElems, newIndex) {
   updateIndicators(currentIndex);
 }
 
-previousBtnElem.addEventListener('click', () =>
-  displayImage(imageElems, currentIndex - 1)
-);
+// previousBtnElem.addEventListener('click', () =>
+//   displayImage(imageElems, currentIndex - 1)
+// );
 nextBtnElem.addEventListener('click', () =>
   displayImage(imageElems, currentIndex + 1)
 );
-
+nextBtnElem.click(); // Trigger the click event to show the first image
 setInterval(() => {
   nextBtnElem.click();
 }, 5000);

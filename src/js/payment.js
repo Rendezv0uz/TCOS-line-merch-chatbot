@@ -45,7 +45,7 @@ form.addEventListener('submit', (e) => {
   // const formData = new FormData(form);
 
   fetch(
-    'https://script.google.com/macros/s/AKfycbwsUdGEKfRPbq0UmokBfZkLb-R84kWrUSFVMmzxDuXct_VqJadl6TjxwTLxeAM_24IS/exec',
+    'https://script.google.com/macros/s/AKfycbxC38n5fcGlFU1vG_meZQumwM9rNdBavTU8-xxN7QM-9mNaKsQwQCCD3z30FvKv_Rs/exec',
     {
       method: 'POST',
       body: new FormData(form),

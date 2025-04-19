@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face {
   font-family: 'Fachada';
@@ -74,7 +75,7 @@ header .cart-icon {
 main {
   position: relative;
   padding: 20px 30px;
-  background-image: url("/assets/addAndreset/QR_Background.svg");
+  background-image: url('/assets/addAndreset/QR_Background.svg');
 }
 
 .btn-back {
@@ -168,8 +169,8 @@ input {
 }
 
 #submitting {
-  background-image: url("/assets/addAndreset/confirm_button.svg");
-  font-family: 'TorslipNantarat';
+  background-image: url('/assets/addAndreset/confirm_button.svg');
+  font-family: 'prompt';
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -189,7 +190,7 @@ input {
   margin: 20px 0px;
   padding: 0px 10px;
   font-size: 14px;
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
   /* background-color: rgb(69, 69, 69); */
   z-index: 1;
 }
@@ -213,7 +214,7 @@ input {
   /* border-radius: 5px; */
   font-size: 16px;
   box-sizing: border-box;
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
 }
 
 .shipping-option input[type='time'] {
@@ -225,7 +226,7 @@ input {
   /* border-radius: 5px; */
   font-size: 16px;
   box-sizing: border-box;
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
 }
 
 .shipping-option input[type='date'] {
@@ -237,7 +238,7 @@ input {
   /* border-radius: 5px; */
   font-size: 16px;
   box-sizing: border-box;
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
 }
 
 .shipping-option input[type='email'] {
@@ -249,7 +250,7 @@ input {
   /* border-radius: 5px; */
   font-size: 16px;
   box-sizing: border-box;
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
 }
 /* .formlol {
   z-index: 1;
@@ -264,7 +265,19 @@ input {
   /* border-radius: 5px; */
   font-size: 16px;
   box-sizing: border-box;
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
+}
+
+.shipping-option input[type='file'] {
+  width: 100%; /* Full width inside the .shipping-option */
+  height: 40px;
+  /* margin-top: 8px; */
+  padding: 10px;
+  border: 1px white solid;
+  /* border-radius: 5px; */
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'prompt';
 }
 
 input[type='number']::-webkit-inner-spin-button,

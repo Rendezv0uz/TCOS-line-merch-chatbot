@@ -10,6 +10,7 @@
 }
 
 body {
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -42,7 +43,7 @@ h4 {
   margin-left: 10px;
 }
 
-#total{
+#total {
   margin-right: 10px;
   font-family: 'Fachada';
 }
@@ -89,26 +90,34 @@ main {
   overflow-x: hidden;
 }
 
-.amount{
+.amount {
   display: flex;
   align-items: center;
 }
 
-#shirtsize{
+#shirtsize {
   font-size: 10px;
 }
 
-#supportMoney{
+#supportMoney {
   max-width: 100vw;
   padding: 0 0 0 0px;
-  margin: 0 ;
+  margin: 0;
 }
 
-.amount, .priceOne{
+.amount,
+.priceOne {
   color: black;
 }
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px; /* space between buttons */
+  flex-shrink: 0;
+  align-items: center;
+}
 
-.blankPrice{
+.blankPrice {
   background-color: #f1e5d3;
   aspect-ratio: 4.35/1;
   display: flex;
@@ -117,38 +126,27 @@ main {
   font-size: 33px;
   padding: 0 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
+.increase-btn-template,
 .decrease-btn-template {
-  font-size: 45px;
-  font-weight: bolder;
-  height: 55px;
-  aspect-ratio: 1/1;
+  width: 10vw;
+  max-width: 50px;
+  min-width: 30px;
+  aspect-ratio: 1 / 1;
+  font-size: 15px;
+  font-weight: bold;
   background-color: transparent;
-  /* color: white; */
-  border-radius: 100%;
-  border: 1px solid;
-  border-color: rgb(0, 0, 0);
-  font-family: 'Fachada';
-  /* text-align: center; */
-  
-  /* padding-bottom: 20px; */
-  /* padding-bottom: 20px; */
-}
-
-.increase-btn-template {
-  font-size: 45px;
-  font-weight: bolder;
-  height: 55px;
-  aspect-ratio: 1/1;
-  background-color: transparent;
-  /* color: white; */
-  border-radius: 100%;
-  border: 1px solid;
-  border-color: rgb(0, 0, 0);
-  font-family: 'Fachada';
-  /* text-align: center; */
-  
+  color: black;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-family: 'Fachada', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .back-button {
@@ -187,15 +185,28 @@ main {
 .decrease-btn {
   font-size: 16px;
   right: 0px;
-  height: 32px;
-  width: 32px;
+  aspect-ratio: 1/1;
+  height: 75%;
   background-color: #1e1e1e;
   color: white;
-  border-radius: 100%;
+  border-radius: 50%;
   border: none;
 }
 
-.increase-btn,
+.increase-btn {
+  font-size: 16px;
+  right: 0px;
+  aspect-ratio: 1/1;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.7;
+}
+
 .btn-back {
   font-size: 16px;
   right: 0px;
@@ -376,7 +387,7 @@ footer {
   object-fit: contain;
 }
 
-.beingClicked{
+.beingClicked {
   background-color: blue !important;
   transition: all 0.3s ease-in-out;
 }

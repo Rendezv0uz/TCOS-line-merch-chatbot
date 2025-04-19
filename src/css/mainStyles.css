@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fachada&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap');
 @font-face {
   font-family: 'Fachada';
   src: url('../fonts/Fachada-Regular.otf') format('opentype');
@@ -152,8 +152,16 @@ header .cart {
   z-index: 10;
 }
 
+.hiddenSalonDescription {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'prompt';
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
 #thaifont {
-  font-family: 'TorslipNantarat';
+  font-family: 'prompt';
   font-size: 12px;
   overflow: visible;
 }
@@ -294,15 +302,9 @@ header .cart {
   top: 50%;
 }
 
-.btn-prev {
-  left: 0%;
-  opacity: 0.5;
-  border-radius: 100%;
-}
-
 .btn-next {
   right: 0%;
-  opacity: 0.5;
+  opacity: 0;
   border-radius: 100%;
 }
 

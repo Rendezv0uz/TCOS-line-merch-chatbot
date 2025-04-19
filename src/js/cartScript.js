@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="priceOne priceMerch-${productId}">฿${
               priceDetail[productId].price * cart[productId]
             }</div>
-          <div>
+          <div class="btn-group">
             <button class="increase-btn-template">+</button>
           <button class="decrease-btn-template">-</button>
           </div>
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="priceOne priceMerch-${size}">฿${
                 priceDetail[productId].price * quantityTshirt
               }</div>
-                    <div>
+                    <div class="btn-group">
                       <button class="increase-btn-template">+</button>
                     <button class="decrease-btn-template">-</button>
                     </div>
@@ -105,7 +105,7 @@ function decreaseQuantity() {
 
 function updateTotal() {
   let price = 0;
-  let shippingCost = emsBtn.classList.contains('beingClicked') ? 30 : 0;
+  let shippingCost = emsBtn.classList.contains('beingClicked') ? 60 : 0;
   Object.entries(cart).forEach(([productName, priceOrSize]) => {
     if (productName === 'tshirt') {
       Object.entries(priceOrSize).forEach(([size, amount]) => {
