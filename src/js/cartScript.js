@@ -202,7 +202,7 @@ staffBtn.addEventListener('click', () => {
 });
 
 document.querySelector('.continueShop').addEventListener('click', goHome);
-document.querySelector('.btn-back').addEventListener('click', goHome);
+// document.querySelector('.btn-back').addEventListener('click', goHome);
 
 // const LIFF_ID = 'YOUR_LIFF_ID'; // Replace with your actual LIFF ID
 
