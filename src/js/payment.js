@@ -1,5 +1,4 @@
-import { dotenv } from 'dotenv';
-dotenv.config();
+require('dotenv').config();
 
 function goHome() {
   window.location.href = 'cart.html';
@@ -105,7 +104,7 @@ window.onload = async () => {
                       🗓 วันที่: ${form.date.value}
                       💰 จำนวนเงิน ${form.pricePay.value} บาท
                       🚚 รูปเเบบการจัดส่ง: ${
-                        form.shippingMethod.value === '1' ? EMS : พนักงาน
+                        form.shippingMethod.value === '1' ? 'EMS' : 'พนักงาน'
                       }
                       ข้อความนี้เป็นข้อความอัตโนมัติ
                       โปรดรอการตอบกลับจากทีมงานเพื่อยืนยันรายการสั่งซื้อเเละดำเนินการชำระเงินต่อไป`,
@@ -117,6 +116,8 @@ window.onload = async () => {
         form.reset();
         liff.closeWindow();
       } catch (err) {
+        localStorage.clear();
+        form.reset();
         liff.closeWindow();
       }
     });
