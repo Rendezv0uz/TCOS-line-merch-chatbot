@@ -4,14 +4,24 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server src/ -c-1",
+    "build": "node scripts/build/index.cjs",
+    "preview": "http-server dist/",
     "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/postcss-url": "^10.0.4",
+    "cheerio": "^1.0.0",
+    "glob": "^11.0.1",
+    "htmlrewriter": "^0.0.12",
     "liff-type": "^2.1.3",
     "nodemon": "^3.1.9",
+    "postcss": "^8.5.3",
+    "postcss-url": "^10.1.3",
+    "rimraf": "^6.0.1",
+    "sharp": "^0.34.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
