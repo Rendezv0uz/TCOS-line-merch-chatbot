@@ -72,8 +72,8 @@ function getPurchasedMerchText() {
 
   return lines.length > 0 ? lines.join('\n') : 'ไม่มีรายการสินค้า';
 }
-const LIFF_ID = process.env.LIFF_ID;
-const form = document.forms['sheet'];
+const LIFF_ID = '2007293588-oGOB4EgR';
+const form = document.querySelector('.formlol');
 window.onload = async () => {
   const autoText = getPurchasedMerchText();
   try {
