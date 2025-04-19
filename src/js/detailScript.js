@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
           tshirtSizeDiv.innerHTML = `
             <img src="/assets/realproduct/tshirt/shirtsize.svg">
               <select id="sizeSelection" name="size-select">
+                <option class="size">Select Size</option>
                 <option class="size" value="S">S</option>
                 <option class="size" value="M">M</option>
                 <option class="size" value="L">L</option>
@@ -120,6 +121,10 @@ function updateProductAmount(productId, size = null, newAmount) {
 
 function resetCart() {
   quantity = 1;
+  const sizeSelect = document.querySelector('#sizeSelection');
+  if (sizeSelect) {
+    sizeSelect.value = 'Select Size';
+  }
   // document.querySelector('.amount-afterclick').textContent = String(quantity).padStart(2,'0')
   updateCart();
 }
@@ -134,14 +139,14 @@ function updateCart() {
 function increaseQuantity() {
   quantity++;
   updateCart();
-  disableButtonTemporarily(document.querySelector('.plus'));
+  // disableButtonTemporarily(document.querySelector('.plus'));
 }
 
 function decreaseQuantity() {
   if (quantity > 1) {
     quantity--;
     updateCart();
-    disableButtonTemporarily(document.querySelector('.minus'));
+    // disableButtonTemporarily(document.querySelector('.minus'));
   }
 }
 
@@ -152,16 +157,29 @@ function disableButtonTemporarily(button) {
   }, 200); // Disable the button for x second
 }
 
+const debounceTimeout = (callback, delay) => {
+  let timeoutId;
+  return (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      callback(...args);
+      timeoutId = null;
+    }, delay);
+  };
+};
+
 document.querySelector('.plus').addEventListener('click', () => {
-  setTimeout(() => {
-    increaseQuantity();
-  }, 300);
+  // setTimeout(() => {
+  increaseQuantity();
+  // }, 300);
 });
 
 document.querySelector('.minus').addEventListener('click', () => {
-  setTimeout(() => {
-    decreaseQuantity();
-  }, 300);
+  // setTimeout(() => {
+  decreaseQuantity();
+  // }, 300);
 });
 
 document.getElementById('addToBasketButton').addEventListener('click', () => {

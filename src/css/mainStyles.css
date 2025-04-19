@@ -22,6 +22,7 @@ body {
   box-sizing: border-box;
   background-color: black;
   color: #ffffff;
+  max-width: 640px;
 }
 
 header {
@@ -127,7 +128,7 @@ header .cart {
 
 .box2 {
   width: 100%;
-  aspect-ratio: 3/1;
+  /* aspect-ratio: 3/1; */
   display: flex;
   /* align-items: center; */
   /* justify-content: center; */
@@ -142,7 +143,7 @@ header .cart {
   background-size: contain;
   /* text-align: right; */
   padding: 25px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .tcosmerch {
@@ -176,6 +177,8 @@ header .cart {
   font-size: 14px;
   font-weight: lighter;
   box-sizing: border-box;
+  filter: contrast(0.8), brightness(0.8);
+  text-shadow: 0px 0px 5px #000;
 }
 
 .leftbox {
@@ -239,8 +242,8 @@ header .cart {
 .carousel {
   position: relative;
   /* width: 150px; */
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 5/4;
   display: flex;
   transition: opacity 1s ease-in-out;

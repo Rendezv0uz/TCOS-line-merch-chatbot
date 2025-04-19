@@ -22,6 +22,7 @@ body {
   box-sizing: border-box;
   background-color: black;
   color: #ffffff;
+  max-width: 640px;
 }
 
 .content-wrapper {
