@@ -111,3 +111,8 @@ setInterval(() => {
 //   dots[slideIndex - 1].className += " active";
 //   setTimeout(showSlides, 2000); // Change image every 2 seconds
 // }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const LIFF_ID = '2007293588-oGOB4EgR';
+  liff.init({ liffId: LIFF_ID, withLoginOnExternalBrowser: true });
+});
